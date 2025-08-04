@@ -1,0 +1,18 @@
+{
+  "name": "movilex-website",
+  "version": "1.0.0",
+  "description": "Servicios profesionales de asistencia para trámites RFC en México",
+  "main": "index.js",
+  "scripts": {
+    "build": "tailwindcss -i ./src/input.css -o ./dist/output.css --watch",
+    "build:prod": "tailwindcss -i ./src/input.css -o ./dist/output.css --minify"
+  },
+  "keywords": ["mexico", "rfc", "sat", "servicios", "asistencia"],
+  "author": "Movilex",
+  "license": "MIT",
+  "devDependencies": {
+    "tailwindcss": "^3.4.0",
+    "autoprefixer": "^10.4.16",
+    "postcss": "^8.4.32"
+  }
+} 
