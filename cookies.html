@@ -1,0 +1,1697 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Política de Cookies - TRAMICO</title>
+    <meta name="description" content="Política de Cookies de TRAMICO. Información sobre el uso de cookies y tecnologías de seguimiento en nuestro sitio web.">
+    <meta name="keywords" content="política de cookies, TRAMICO, cookies, seguimiento, privacidad">
+    
+    <!-- Performance and SEO optimizations -->
+    <meta name="robots" content="index, follow">
+    <meta name="author" content="TRAMICO">
+    <meta name="theme-color" content="#3b82f6">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+    
+    <!-- Preload critical resources -->
+    <link rel="preload" href="dist/output.css" as="style">
+    <link rel="preload" href="img/favicon.ico" as="image">
+    
+    <!-- DNS prefetch for external resources -->
+    <link rel="dns-prefetch" href="//fonts.googleapis.com">
+    <link rel="dns-prefetch" href="//fonts.gstatic.com">
+    <link rel="stylesheet" href="dist/output.css">
+    <link rel="icon" type="image/x-icon" href="img/favicon.ico">
+    <style>
+        /* Cookie Banner - Optimized and responsive */
+        #cookie-banner {
+            position: fixed !important;
+            bottom: 0 !important;
+            left: 0 !important;
+            right: 0 !important;
+            z-index: 9999 !important;
+            transform: translateY(100%) !important;
+            transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1) !important;
+            pointer-events: auto !important;
+            will-change: transform !important;
+            backface-visibility: hidden !important;
+            contain: layout style paint !important;
+            background: rgba(255, 255, 255, 0.98) !important;
+            backdrop-filter: blur(10px) !important;
+            -webkit-backdrop-filter: blur(10px) !important;
+        }
+        
+        #cookie-banner.show {
+            transform: translateY(0) !important;
+        }
+        
+        /* Optimized animations for children */
+        #cookie-banner * {
+            transform: none !important;
+            transition: color 0.2s ease, background-color 0.2s ease, border-color 0.2s ease !important;
+        }
+        
+        /* Prevent any hover effects on cookie banner */
+        #cookie-banner:hover {
+            transform: translateY(100%) !important;
+        }
+        
+        #cookie-banner.show:hover {
+            transform: translateY(0) !important;
+        }
+        
+        /* Compact button layout */
+        #cookie-banner .button-group {
+            display: flex !important;
+            flex-direction: row !important;
+            gap: 0.5rem !important;
+            align-items: center !important;
+            flex-wrap: wrap !important;
+        }
+        
+        #cookie-banner .button-group button {
+            flex: 0 0 auto !important;
+            min-width: fit-content !important;
+            white-space: nowrap !important;
+            padding: 0.5rem 1rem !important;
+        }
+        
+        #cookie-banner .button-group a {
+            flex: 0 0 auto !important;
+            min-width: fit-content !important;
+            white-space: nowrap !important;
+        }
+        
+        /* Cookie preferences modal */
+        #cookie-modal {
+            position: fixed !important;
+            top: 0 !important;
+            left: 0 !important;
+            right: 0 !important;
+            bottom: 0 !important;
+            background: rgba(0, 0, 0, 0.5) !important;
+            z-index: 10000 !important;
+            display: none !important;
+            align-items: center !important;
+            justify-content: center !important;
+            padding: 1rem !important;
+        }
+        
+        #cookie-modal.show {
+            display: flex !important;
+        }
+        
+        #cookie-modal .modal-content {
+            background: white !important;
+            border-radius: 0.75rem !important;
+            max-width: 32rem !important;
+            width: 100% !important;
+            max-height: 90vh !important;
+            overflow-y: auto !important;
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25) !important;
+        }
+        
+        /* Responsive optimizations */
+        @media (max-width: 768px) {
+            #cookie-banner {
+                padding: 0 1rem !important;
+            }
+            
+            #cookie-banner .max-w-7xl {
+                padding: 1rem 0 !important;
+            }
+            
+            #cookie-banner h3 {
+                font-size: 1.125rem !important;
+                line-height: 1.5 !important;
+            }
+            
+            #cookie-banner p {
+                font-size: 0.875rem !important;
+                line-height: 1.6 !important;
+            }
+            
+            #cookie-banner .button-group {
+                flex-direction: column !important;
+                gap: 0.5rem !important;
+            }
+            
+            #cookie-banner .button-group button {
+                width: 100% !important;
+                padding: 0.5rem 1rem !important;
+            }
+            
+            #cookie-banner .button-group a {
+                width: 100% !important;
+                text-align: center !important;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            #cookie-banner {
+                padding: 0 0.75rem !important;
+            }
+            
+            #cookie-banner .max-w-7xl {
+                padding: 0.75rem 0 !important;
+            }
+            
+            #cookie-banner h3 {
+                font-size: 1rem !important;
+            }
+            
+            #cookie-banner p {
+                font-size: 0.8125rem !important;
+            }
+        }
+        
+        /* Wide screen optimizations */
+        @media (min-width: 1536px) {
+            #cookie-banner .max-w-7xl {
+                max-width: 90rem !important;
+                padding-left: 2rem !important;
+                padding-right: 2rem !important;
+            }
+            
+            #cookie-banner {
+                padding: 0 2rem !important;
+            }
+            
+            #cookie-banner h3 {
+                font-size: 1.25rem !important;
+            }
+            
+            #cookie-banner p {
+                font-size: 1rem !important;
+                line-height: 1.7 !important;
+            }
+            
+            #cookie-banner .button-group button {
+                padding: 0.75rem 1.25rem !important;
+                font-size: 1rem !important;
+            }
+            
+            #cookie-banner .button-group a {
+                padding: 0.75rem 1.25rem !important;
+                font-size: 1rem !important;
+            }
+        }
+        
+        @media (min-width: 1920px) {
+            #cookie-banner .max-w-7xl {
+                max-width: 100rem !important;
+                padding-left: 3rem !important;
+                padding-right: 3rem !important;
+            }
+            
+            #cookie-banner {
+                padding: 0 3rem !important;
+            }
+            
+            #cookie-banner h3 {
+                font-size: 1.375rem !important;
+            }
+            
+            #cookie-banner p {
+                font-size: 1.125rem !important;
+                line-height: 1.8 !important;
+            }
+            
+            #cookie-banner .button-group button {
+                padding: 0.875rem 1.5rem !important;
+                font-size: 1.125rem !important;
+            }
+            
+            #cookie-banner .button-group a {
+                padding: 0.875rem 1.5rem !important;
+                font-size: 1.125rem !important;
+            }
+            
+            #cookie-banner svg {
+                width: 1.75rem !important;
+                height: 1.75rem !important;
+            }
+        }
+        
+        /* High contrast mode support */
+        @media (prefers-contrast: high) {
+            #cookie-banner {
+                border-top: 2px solid #000 !important;
+                background: #fff !important;
+            }
+            
+            #cookie-banner button {
+                border: 2px solid currentColor !important;
+            }
+        }
+        
+        /* Reduced motion support */
+        @media (prefers-reduced-motion: reduce) {
+            #cookie-banner {
+                transition: transform 0.1s ease !important;
+            }
+            
+            #cookie-banner * {
+                transition: none !important;
+            }
+        }
+        
+        /* Focus styles for accessibility */
+        #cookie-banner button:focus,
+        #cookie-banner a:focus {
+            outline: 2px solid #3b82f6 !important;
+            outline-offset: 2px !important;
+        }
+        
+        /* Print styles */
+        @media print {
+            #cookie-banner {
+                display: none !important;
+            }
+        }
+
+        /* Responsive typography and spacing for cookies content */
+        @media (max-width: 768px) {
+            .prose h2 {
+                font-size: 1.25rem !important;
+                line-height: 1.4 !important;
+                margin-top: 1.5rem !important;
+                margin-bottom: 0.75rem !important;
+            }
+            .prose h3 {
+                font-size: 1.125rem !important;
+                line-height: 1.4 !important;
+                margin-top: 1.25rem !important;
+                margin-bottom: 0.5rem !important;
+            }
+            .prose h4 {
+                font-size: 1rem !important;
+                line-height: 1.4 !important;
+                margin-top: 1rem !important;
+                margin-bottom: 0.5rem !important;
+            }
+            .prose p {
+                font-size: 0.875rem !important;
+                line-height: 1.6 !important;
+                margin-bottom: 0.75rem !important;
+            }
+            .prose ul {
+                margin-top: 0.5rem !important;
+                margin-bottom: 0.75rem !important;
+            }
+            .prose li {
+                font-size: 0.875rem !important;
+                line-height: 1.5 !important;
+                margin-bottom: 0.25rem !important;
+            }
+            /* Mobile table improvements */
+            .overflow-x-auto {
+                margin: 1rem -1rem !important;
+                border-radius: 0 !important;
+                -webkit-overflow-scrolling: touch !important;
+            }
+            .overflow-x-auto table {
+                font-size: 0.8125rem !important;
+                min-width: 600px !important;
+            }
+            .overflow-x-auto th,
+            .overflow-x-auto td {
+                padding: 0.75rem 0.5rem !important;
+                min-width: 180px !important;
+                max-width: 300px !important;
+                word-wrap: break-word !important;
+                overflow-wrap: break-word !important;
+            }
+        }
+        @media (max-width: 480px) {
+            .prose h2 {
+                font-size: 1.125rem !important;
+                line-height: 1.3 !important;
+                margin-top: 1.25rem !important;
+                margin-bottom: 0.5rem !important;
+            }
+            .prose h3 {
+                font-size: 1rem !important;
+                line-height: 1.3 !important;
+                margin-top: 1rem !important;
+                margin-bottom: 0.375rem !important;
+            }
+            .prose h4 {
+                font-size: 0.9375rem !important;
+                line-height: 1.3 !important;
+                margin-top: 0.875rem !important;
+                margin-bottom: 0.375rem !important;
+            }
+            .prose p {
+                font-size: 0.8125rem !important;
+                line-height: 1.5 !important;
+                margin-bottom: 0.625rem !important;
+            }
+            .prose ul {
+                margin-top: 0.375rem !important;
+                margin-bottom: 0.625rem !important;
+            }
+            .prose li {
+                font-size: 0.8125rem !important;
+                line-height: 1.4 !important;
+                margin-bottom: 0.1875rem !important;
+            }
+            /* Extra small mobile table */
+            .overflow-x-auto table {
+                font-size: 0.75rem !important;
+                min-width: 500px !important;
+            }
+            .overflow-x-auto th,
+            .overflow-x-auto td {
+                padding: 0.5rem 0.375rem !important;
+                min-width: 140px !important;
+                max-width: 250px !important;
+                word-wrap: break-word !important;
+                overflow-wrap: break-word !important;
+            }
+        }
+        /* Extra small screens - table scroll indicator */
+        @media (max-width: 360px) {
+            .overflow-x-auto {
+                position: relative !important;
+            }
+            .overflow-x-auto::after {
+                content: "← Desliza para ver más →" !important;
+                position: absolute !important;
+                bottom: -0.5rem !important;
+                left: 50% !important;
+                transform: translateX(-50%) !important;
+                font-size: 0.75rem !important;
+                color: #6b7280 !important;
+                background: #f9fafb !important;
+                padding: 0.25rem 0.5rem !important;
+                border-radius: 0.25rem !important;
+                white-space: nowrap !important;
+            }
+            .overflow-x-auto table {
+                min-width: 450px !important;
+            }
+            .overflow-x-auto th,
+            .overflow-x-auto td {
+                min-width: 120px !important;
+                max-width: 200px !important;
+                font-size: 0.6875rem !important;
+            }
+        }
+        /* Ultra small screens - alternative table display */
+        @media (max-width: 320px) {
+            .overflow-x-auto {
+                margin: 1rem -0.5rem !important;
+            }
+            .overflow-x-auto table {
+                min-width: 400px !important;
+            }
+            .overflow-x-auto th,
+            .overflow-x-auto td {
+                min-width: 100px !important;
+                max-width: 180px !important;
+                font-size: 0.625rem !important;
+                padding: 0.375rem 0.25rem !important;
+            }
+            .overflow-x-auto::after {
+                font-size: 0.6875rem !important;
+                padding: 0.125rem 0.375rem !important;
+            }
+        }
+        /* Large screen optimizations */
+        @media (min-width: 1024px) {
+            .prose h2 {
+                font-size: 1.5rem !important;
+                line-height: 1.3 !important;
+                margin-top: 2rem !important;
+                margin-bottom: 1rem !important;
+            }
+            .prose h3 {
+                font-size: 1.25rem !important;
+                line-height: 1.4 !important;
+                margin-top: 1.5rem !important;
+                margin-bottom: 0.75rem !important;
+            }
+            .prose h4 {
+                font-size: 1.125rem !important;
+                line-height: 1.4 !important;
+                margin-top: 1.25rem !important;
+                margin-bottom: 0.625rem !important;
+            }
+            .prose p {
+                font-size: 1rem !important;
+                line-height: 1.7 !important;
+                margin-bottom: 1rem !important;
+            }
+            .prose ul {
+                margin-top: 0.75rem !important;
+                margin-bottom: 1rem !important;
+            }
+            .prose li {
+                font-size: 1rem !important;
+                line-height: 1.6 !important;
+                margin-bottom: 0.375rem !important;
+            }
+        }
+        /* Extra large screen optimizations */
+        @media (min-width: 1536px) {
+            .prose h2 {
+                font-size: 1.75rem !important;
+                line-height: 1.2 !important;
+                margin-top: 2.5rem !important;
+                margin-bottom: 1.25rem !important;
+            }
+            .prose h3 {
+                font-size: 1.5rem !important;
+                line-height: 1.3 !important;
+                margin-top: 2rem !important;
+                margin-bottom: 1rem !important;
+            }
+            .prose h4 {
+                font-size: 1.25rem !important;
+                line-height: 1.3 !important;
+                margin-top: 1.5rem !important;
+                margin-bottom: 0.75rem !important;
+            }
+            .prose p {
+                font-size: 1.125rem !important;
+                line-height: 1.8 !important;
+                margin-bottom: 1.25rem !important;
+            }
+            .prose ul {
+                margin-top: 1rem !important;
+                margin-bottom: 1.25rem !important;
+            }
+            .prose li {
+                font-size: 1.125rem !important;
+                line-height: 1.7 !important;
+                margin-bottom: 0.5rem !important;
+            }
+        }
+    </style>
+</head>
+<body class="bg-white">
+    <!-- Top Banner -->
+    <div class="bg-accent-600 text-white py-2 text-center text-sm">
+        <p>⚠️ Somos un servicio privado de asistencia. No estamos afiliados ni respaldados por el SAT ni por ninguna institución gubernamental. Todos los trámites se realizan a través de los canales oficiales con tu autorización.</p>
+    </div>
+
+    <!-- Main Container -->
+    <div class="min-h-screen flex flex-col lg:flex-row">
+        <!-- Mobile Menu Button -->
+        <div class="lg:hidden sticky top-4 left-4 z-50 pointer-events-auto ml-4 mt-4">
+            <button id="mobile-menu-btn" class="bg-accent-600 text-white p-2 rounded-lg shadow-lg">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                </svg>
+            </button>
+        </div>
+
+        <!-- Left Sidebar -->
+        <div id="sidebar" class="fixed lg:sticky lg:top-0 inset-0 z-40 lg:z-auto transform -translate-x-full lg:translate-x-0 transition-transform duration-300 ease-in-out lg:transition-none" style="height: 100vh;">
+            <div class="lg:hidden fixed inset-0 bg-black bg-opacity-50 z-30 opacity-0 pointer-events-none transition-opacity duration-300" id="sidebar-overlay"></div>
+            <div class="relative bg-gray-50 border-r border-gray-200 w-80 h-full lg:h-auto overflow-y-auto z-40 p-4 lg:p-8 lg:sticky lg:top-0 max-h-screen lg:max-h-none" id="sidebar-content">
+                <!-- Close button for mobile -->
+                <div class="lg:hidden flex justify-end mb-4">
+                    <button id="close-sidebar" class="text-gray-500 hover:text-gray-700">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                        </svg>
+                    </button>
+                </div>
+                <div class="mb-8">
+                    <h1 class="text-2xl font-bold text-accent-600">TRAMICO</h1>
+                </div>
+            
+                <nav class="space-y-4 mb-8">
+                    <a href="index.html" class="block p-3 bg-white rounded-lg shadow-sm border border-gray-200 hover:border-accent-300 transition-colors">
+                        <div class="flex items-center">
+                            <svg class="w-5 h-5 text-accent-600 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 7v10a2 2 0 002 2h14a2 2 0 002-2V9a2 2 0 00-2-2H5a2 2 0 00-2-2z"></path>
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 5a2 2 0 012-2h4a2 2 0 012 2v6H8V5z"></path>
+                            </svg>
+                            <span class="font-medium">Inicio</span>
+                        </div>
+                    </a>
+                    <a href="about.html" class="block p-3 bg-white rounded-lg shadow-sm border border-gray-200 hover:border-accent-300 transition-colors">
+                        <div class="flex items-center">
+                            <svg class="w-5 h-5 text-accent-600 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"></path>
+                            </svg>
+                            <span class="font-medium">Sobre Nosotros</span>
+                        </div>
+                    </a>
+                    <a href="contact.html" class="block p-3 bg-white rounded-lg shadow-sm border border-gray-200 hover:border-accent-300 transition-colors">
+                        <div class="flex items-center">
+                            <svg class="w-5 h-5 text-accent-600 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
+                            </svg>
+                            <span class="font-medium">Contacto</span>
+                        </div>
+                    </a>
+                </nav>
+                <div class="bg-white rounded-lg p-4 shadow-sm border border-gray-200">
+                    <h3 class="font-semibold text-gray-900 mb-3">Contacto Rápido</h3>
+                    <div class="space-y-2 text-sm">
+                        <p class="text-gray-600">📞 +52 55 9932 0023</p>
+                        <p class="text-gray-600">📧 admin@tramico.org</p>
+                        <p class="text-gray-600">🕒 Lun-Vie: 9:00-18:00</p>
+                    </div>
+                </div>
+             
+                <div class="bg-white rounded-lg p-4 shadow-sm border border-gray-200 mt-4">
+                    <h3 class="font-semibold text-gray-900 mb-3">Información Legal</h3>
+                    <div class="space-y-2 text-sm">
+                        <a href="privacy.html" class="text-accent-600 hover:text-accent-700 block">📋 Política de Privacidad</a>
+                        <a href="terms.html" class="text-accent-600 hover:text-accent-700 block">📄 Términos de Servicio</a>
+                        <a href="aviso.html" class="text-accent-600 hover:text-accent-700 block">⚖️ Aviso Legal</a>
+                        <a href="refund.html" class="text-accent-600 hover:text-accent-700 block">💰 Política de Reembolso</a>
+                        <a href="cookies.html" class="text-accent-600 hover:text-accent-700 block">🍪 Política de Cookies</a>
+                        <p class="text-gray-600 text-xs mt-2">• Servicio privado de asistencia</p>
+                        <p class="text-gray-600 text-xs">• No afiliados al SAT</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Main Content Area -->
+        <div class="flex-1 w-full relative z-10">
+            <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12 lg:py-16">
+                <div class="mb-8">
+                    <h1 class="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-900 mb-4 leading-tight">Política de Cookies</h1>
+                    <p class="text-gray-600">Última actualización: Enero 2024</p>
+                </div>
+
+                <div class="prose prose-sm sm:prose-base lg:prose-lg xl:prose-xl max-w-none">
+                    <div class="bg-blue-50 border border-blue-200 rounded-lg p-6 mb-8">
+                        <h2 class="text-blue-800 font-bold text-xl mb-4">🍪 Política de Cookies Integral</h2>
+                        <p class="text-blue-700 font-medium">TRAMICO utiliza cookies y tecnologías similares para mejorar tu experiencia en nuestro sitio web y proporcionar servicios más personalizados. Esta política explica detalladamente cómo utilizamos estas tecnologías.</p>
+                    </div>
+
+                    <h2>1. Información General y Alcance</h2>
+                    <p><strong>Última actualización:</strong> Enero 2024</p>
+                    <p><strong>Versión:</strong> 1.0</p>
+                    <p><strong>Responsable del tratamiento:</strong> TRAMICO (en adelante, "nosotros", "nuestro", "la empresa", "el responsable")</p>
+                    <p><strong>Domicilio:</strong> México</p>
+                    <p><strong>Correo electrónico:</strong> admin@tramico.org</p>
+                    <p><strong>Teléfono:</strong> +52 55 9932 0023</p>
+
+                    <p>Esta Política de Cookies Integral (en adelante, "Política") describe detalladamente cómo TRAMICO utiliza cookies, tecnologías similares y herramientas de seguimiento en nuestro sitio web. Esta política forma parte integral de nuestra Política de Privacidad y debe leerse en conjunto con nuestros Términos de Servicio y Aviso Legal.</p>
+
+                    <p><strong>Importante:</strong> TRAMICO es un servicio privado de asistencia y consultoría especializada en trámites administrativos en México. No somos una institución gubernamental, no estamos afiliados al SAT (Servicio de Administración Tributaria) ni a ninguna entidad oficial mexicana. Todos los trámites se realizan únicamente a través de los canales oficiales correspondientes y con tu autorización expresa.</p>
+
+                    <h2>2. Definiciones y Términos Clave</h2>
+                    <p>Para los efectos de esta Política de Cookies, se entenderá por:</p>
+                    <ul>
+                        <li><strong>Cookies:</strong> Pequeños archivos de texto que se almacenan en tu dispositivo cuando visitas nuestro sitio web.</li>
+                        <li><strong>Web Beacons:</strong> Imágenes pequeñas y transparentes que se utilizan para rastrear la actividad del usuario.</li>
+                        <li><strong>Pixel Tags:</strong> Fragmentos de código que permiten rastrear la actividad del usuario en sitios web.</li>
+                        <li><strong>Local Storage:</strong> Tecnología que permite almacenar datos en el navegador del usuario.</li>
+                        <li><strong>Session Storage:</strong> Almacenamiento temporal de datos durante la sesión del navegador.</li>
+                        <li><strong>Third-party Cookies:</strong> Cookies establecidas por dominios diferentes al que estás visitando.</li>
+                        <li><strong>First-party Cookies:</strong> Cookies establecidas directamente por nuestro sitio web.</li>
+                        <li><strong>Persistent Cookies:</strong> Cookies que permanecen en tu dispositivo después de cerrar el navegador.</li>
+                        <li><strong>Session Cookies:</strong> Cookies que se eliminan automáticamente cuando cierras el navegador.</li>
+                    </ul>
+
+                    <h2>3. Tipos de Cookies que Utilizamos</h2>
+                    
+                    <h3>3.1 Cookies Esenciales (Necesarias)</h3>
+                    <p>Estas cookies son absolutamente necesarias para el funcionamiento básico del sitio web y no se pueden desactivar:</p>
+                    <ul>
+                        <li><strong>Cookies de sesión:</strong> Para mantener tu sesión activa durante la navegación</li>
+                        <li><strong>Cookies de seguridad:</strong> Para proteger contra ataques CSRF y otros ataques maliciosos</li>
+                        <li><strong>Cookies de autenticación:</strong> Para recordar tu estado de inicio de sesión</li>
+                        <li><strong>Cookies de carrito de compras:</strong> Para mantener los elementos en tu carrito</li>
+                        <li><strong>Cookies de preferencias básicas:</strong> Para recordar configuraciones fundamentales</li>
+                    </ul>
+                    <p><strong>Propósito:</strong> Garantizar la funcionalidad básica del sitio web y la seguridad de tu sesión.</p>
+                    <p><strong>Duración:</strong> Sesión o hasta 1 año, dependiendo de la función específica.</p>
+
+                    <h3>3.2 Cookies Analíticas (Opcionales)</h3>
+                    <p>Estas cookies nos ayudan a entender cómo utilizas nuestro sitio web para mejorarlo:</p>
+                    <ul>
+                        <li><strong>Google Analytics:</strong> Para analizar el tráfico y comportamiento de usuarios</li>
+                        <li><strong>Cookies de rendimiento:</strong> Para medir el tiempo de carga y rendimiento del sitio</li>
+                        <li><strong>Cookies de navegación:</strong> Para entender qué páginas visitas y cómo navegas</li>
+                        <li><strong>Cookies de errores:</strong> Para identificar y resolver problemas técnicos</li>
+                    </ul>
+                    <p><strong>Propósito:</strong> Mejorar la experiencia del usuario y optimizar nuestro sitio web.</p>
+                    <p><strong>Duración:</strong> Hasta 2 años para análisis a largo plazo.</p>
+
+                    <h3>3.3 Cookies de Funcionalidad (Opcionales)</h3>
+                    <p>Estas cookies mejoran la funcionalidad y personalización:</p>
+                    <ul>
+                        <li><strong>Cookies de idioma:</strong> Para recordar tu preferencia de idioma</li>
+                        <li><strong>Cookies de región:</strong> Para mostrar contenido relevante para tu ubicación</li>
+                        <li><strong>Cookies de formularios:</strong> Para recordar información que has ingresado</li>
+                        <li><strong>Cookies de accesibilidad:</strong> Para recordar configuraciones de accesibilidad</li>
+                    </ul>
+                    <p><strong>Propósito:</strong> Proporcionar una experiencia más personalizada y funcional.</p>
+                    <p><strong>Duración:</strong> Hasta 1 año para preferencias de usuario.</p>
+
+                    <h3>3.4 Cookies de Marketing (Opcionales)</h3>
+                    <p>Estas cookies se utilizan para publicidad y marketing, solo con tu consentimiento explícito:</p>
+                    <ul>
+                        <li><strong>Cookies de publicidad:</strong> Para mostrar anuncios relevantes</li>
+                        <li><strong>Cookies de redes sociales:</strong> Para integración con plataformas sociales</li>
+                        <li><strong>Cookies de remarketing:</strong> Para recordar tus intereses y mostrar contenido relevante</li>
+                        <li><strong>Cookies de afiliados:</strong> Para rastrear referencias de afiliados</li>
+                    </ul>
+                    <p><strong>Propósito:</strong> Proporcionar contenido y publicidad más relevante para tus intereses.</p>
+                    <p><strong>Duración:</strong> Hasta 2 años para campañas de marketing.</p>
+
+                    <h2>4. Cookies de Terceros</h2>
+                    
+                    <h3>4.1 Proveedores de Análisis</h3>
+                    <p>Utilizamos los siguientes proveedores de análisis:</p>
+                    <ul>
+                        <li><strong>Google Analytics:</strong> Para análisis de tráfico y comportamiento de usuarios</li>
+                        <li><strong>Google Tag Manager:</strong> Para gestionar etiquetas y scripts</li>
+                        <li><strong>Hotjar:</strong> Para análisis de comportamiento y mapas de calor</li>
+                        <li><strong>Crazy Egg:</strong> Para análisis de clics y comportamiento</li>
+                    </ul>
+
+                    <h3>4.2 Proveedores de Publicidad</h3>
+                    <p>Los siguientes proveedores pueden establecer cookies de marketing (solo con consentimiento):</p>
+                    <ul>
+                        <li><strong>Google Ads:</strong> Para publicidad dirigida y remarketing</li>
+                        <li><strong>Facebook Pixel:</strong> Para publicidad en redes sociales</li>
+                        <li><strong>LinkedIn Insight Tag:</strong> Para publicidad en LinkedIn</li>
+                        <li><strong>Twitter Pixel:</strong> Para publicidad en Twitter</li>
+                    </ul>
+
+                    <h3>4.3 Proveedores de Funcionalidad</h3>
+                    <p>Utilizamos estos proveedores para funcionalidades específicas:</p>
+                    <ul>
+                        <li><strong>Stripe:</strong> Para procesamiento de pagos</li>
+                        <li><strong>PayPal:</strong> Para procesamiento de pagos alternativo</li>
+                        <li><strong>Zendesk:</strong> Para soporte al cliente</li>
+                        <li><strong>Intercom:</strong> Para chat en vivo</li>
+                    </ul>
+
+                    <h2>5. Gestión y Control de Cookies</h2>
+                    
+                    <h3>5.1 Panel de Configuración de Cookies</h3>
+                    <p>Proporcionamos un panel de configuración de cookies que te permite:</p>
+                    <ul>
+                        <li><strong>Ver todas las cookies:</strong> Lista completa de cookies utilizadas</li>
+                        <li><strong>Activar/desactivar categorías:</strong> Control granular por tipo de cookie</li>
+                        <li><strong>Gestionar preferencias:</strong> Configurar tus preferencias de privacidad</li>
+                        <li><strong>Revocar consentimiento:</strong> Retirar el consentimiento en cualquier momento</li>
+                        <li><strong>Descargar datos:</strong> Obtener una copia de tus datos de cookies</li>
+                    </ul>
+
+                    <h3>5.2 Configuración del Navegador</h3>
+                    <p>También puedes gestionar cookies a través de tu navegador:</p>
+                    <ul>
+                        <li><strong>Chrome:</strong> Configuración > Privacidad y seguridad > Cookies</li>
+                        <li><strong>Firefox:</strong> Opciones > Privacidad y seguridad > Cookies</li>
+                        <li><strong>Safari:</strong> Preferencias > Privacidad > Cookies</li>
+                        <li><strong>Edge:</strong> Configuración > Cookies y permisos del sitio</li>
+                    </ul>
+
+                    <h3>5.3 Herramientas de Terceros</h3>
+                    <p>Puedes utilizar herramientas adicionales para gestionar cookies:</p>
+                    <ul>
+                        <li><strong>AdBlock Plus:</strong> Para bloquear cookies de publicidad</li>
+                        <li><strong>Ghostery:</strong> Para detectar y bloquear trackers</li>
+                        <li><strong>Privacy Badger:</strong> Para bloquear trackers automáticamente</li>
+                        <li><strong>uBlock Origin:</strong> Para bloqueo avanzado de contenido</li>
+                    </ul>
+
+                    <h2>6. Impacto de Deshabilitar Cookies</h2>
+                    
+                    <h3>6.1 Cookies Esenciales</h3>
+                    <p>Si deshabilitas las cookies esenciales:</p>
+                    <ul>
+                        <li><strong>No podrás iniciar sesión:</strong> Las funciones de autenticación no funcionarán</li>
+                        <li><strong>No podrás realizar compras:</strong> El carrito de compras no funcionará</li>
+                        <li><strong>Se perderán las preferencias:</strong> Tendrás que configurar todo nuevamente</li>
+                        <li><strong>Problemas de seguridad:</strong> Mayor vulnerabilidad a ataques</li>
+                    </ul>
+
+                    <h3>6.2 Cookies Analíticas</h3>
+                    <p>Si deshabilitas las cookies analíticas:</p>
+                    <ul>
+                        <li><strong>No podremos mejorar el sitio:</strong> No tendremos datos sobre el uso</li>
+                        <li><strong>Problemas no detectados:</strong> No podremos identificar errores</li>
+                        <li><strong>Experiencia no optimizada:</strong> No podremos personalizar el contenido</li>
+                    </ul>
+
+                    <h3>6.3 Cookies de Marketing</h3>
+                    <p>Si deshabilitas las cookies de marketing:</p>
+                    <ul>
+                        <li><strong>Publicidad menos relevante:</strong> Verás anuncios genéricos</li>
+                        <li><strong>No habrá remarketing:</strong> No verás anuncios basados en tu historial</li>
+                        <li><strong>Menos personalización:</strong> El contenido será menos relevante</li>
+                    </ul>
+
+                    <h2>7. Ejemplos Específicos de Cookies</h2>
+                    
+                    <h3>7.1 Cookies de TRAMICO</h3>
+                    <p>Ejemplos de cookies que establecemos directamente:</p>
+                    <ul>
+                        <li><strong>tramico_session:</strong> Mantiene tu sesión activa</li>
+                        <li><strong>tramico_preferences:</strong> Almacena tus preferencias de idioma y región</li>
+                        <li><strong>tramico_cart:</strong> Mantiene los elementos en tu carrito de compras</li>
+                        <li><strong>tramico_consent:</strong> Almacena tus preferencias de consentimiento</li>
+                        <li><strong>tramico_security:</strong> Protege contra ataques CSRF</li>
+                    </ul>
+
+                    <h3>7.2 Cookies de Google Analytics</h3>
+                    <p>Cookies establecidas por Google Analytics:</p>
+                    <ul>
+                        <li><strong>_ga:</strong> Distingue usuarios únicos (2 años)</li>
+                        <li><strong>_gid:</strong> Distingue usuarios únicos (24 horas)</li>
+                        <li><strong>_gat:</strong> Limita la tasa de solicitudes (1 minuto)</li>
+                        <li><strong>_ga_XXXXXXXXXX:</strong> Persistencia de sesión (2 años)</li>
+                    </ul>
+
+                    <h3>7.3 Cookies de Publicidad</h3>
+                    <p>Ejemplos de cookies de publicidad (solo con consentimiento):</p>
+                    <ul>
+                        <li><strong>Google Ads:</strong> _gads, _gac, _gcl_au</li>
+                        <li><strong>Facebook:</strong> _fbp, _fbc, fr</li>
+                        <li><strong>LinkedIn:</strong> li_sugr, UserMatchHistory</li>
+                        <li><strong>Twitter:</strong> _twitter_sess, ct0</li>
+                    </ul>
+
+                    <h2>8. Transferencias Internacionales de Datos</h2>
+                    
+                    <h3>8.1 Proveedores Internacionales</h3>
+                    <p>Algunos de nuestros proveedores de cookies están ubicados fuera de México:</p>
+                    <ul>
+                        <li><strong>Google (Estados Unidos):</strong> Google Analytics, Google Ads</li>
+                        <li><strong>Facebook (Estados Unidos):</strong> Facebook Pixel</li>
+                        <li><strong>LinkedIn (Estados Unidos):</strong> LinkedIn Insight Tag</li>
+                        <li><strong>Stripe (Estados Unidos):</strong> Procesamiento de pagos</li>
+                    </ul>
+
+                    <h3>8.2 Protecciones Aplicables</h3>
+                    <p>Para transferencias internacionales, aplicamos las siguientes protecciones:</p>
+                    <ul>
+                        <li><strong>Cláusulas contractuales estándar:</strong> Aprobadas por autoridades de protección de datos</li>
+                        <li><strong>Certificaciones de privacidad:</strong> Como Privacy Shield (cuando aplicable)</li>
+                        <li><strong>Códigos de conducta:</strong> Aprobados por autoridades competentes</li>
+                        <li><strong>Certificaciones aprobadas:</strong> Mecanismos de transferencia reconocidos</li>
+                    </ul>
+
+                    <h2>9. Derechos de los Usuarios</h2>
+                    
+                    <h3>9.1 Derecho de Información</h3>
+                    <p>Tienes derecho a:</p>
+                    <ul>
+                        <li><strong>Ser informado:</strong> Sobre qué cookies utilizamos y por qué</li>
+                        <li><strong>Acceder a tus datos:</strong> Obtener información sobre los datos recopilados</li>
+                        <li><strong>Rectificar datos:</strong> Corregir información inexacta</li>
+                        <li><strong>Eliminar datos:</strong> Solicitar la eliminación de tus datos</li>
+                    </ul>
+
+                    <h3>9.2 Derecho de Consentimiento</h3>
+                    <p>Tienes derecho a:</p>
+                    <ul>
+                        <li><strong>Dar consentimiento:</strong> Aceptar o rechazar cookies opcionales</li>
+                        <li><strong>Retirar consentimiento:</strong> Revocar el consentimiento en cualquier momento</li>
+                        <li><strong>Modificar preferencias:</strong> Cambiar tus configuraciones de cookies</li>
+                        <li><strong>Ser informado:</strong> Sobre cambios en nuestra política de cookies</li>
+                    </ul>
+
+                    <h3>9.3 Derecho de Portabilidad</h3>
+                    <p>Tienes derecho a:</p>
+                    <ul>
+                        <li><strong>Descargar datos:</strong> Obtener una copia de tus datos de cookies</li>
+                        <li><strong>Transferir datos:</strong> Mover tus datos a otro proveedor</li>
+                        <li><strong>Formato estructurado:</strong> Recibir tus datos en formato legible</li>
+                    </ul>
+
+                    <h2>10. Cumplimiento Legal</h2>
+                    
+                    <h3>10.1 Regulaciones Aplicables</h3>
+                    <p>Nuestra política de cookies cumple con:</p>
+                    <ul>
+                        <li><strong>Ley Federal de Protección de Datos Personales (México):</strong> Principios de licitud, consentimiento, información, calidad, finalidad, lealtad, proporcionalidad y responsabilidad</li>
+                        <li><strong>Reglamento General de Protección de Datos (RGPD):</strong> Para usuarios de la Unión Europea</li>
+                        <li><strong>California Consumer Privacy Act (CCPA):</strong> Para residentes de California</li>
+                        <li><strong>ePrivacy Directive:</strong> Directiva sobre privacidad en comunicaciones electrónicas</li>
+                    </ul>
+
+                    <h3>10.2 Principios de Cumplimiento</h3>
+                    <p>Aplicamos los siguientes principios:</p>
+                    <ul>
+                        <li><strong>Transparencia:</strong> Información clara sobre el uso de cookies</li>
+                        <li><strong>Consentimiento:</strong> Consentimiento explícito para cookies opcionales</li>
+                        <li><strong>Minimización:</strong> Solo recopilamos datos necesarios</li>
+                        <li><strong>Seguridad:</strong> Protección adecuada de los datos recopilados</li>
+                        <li><strong>Responsabilidad:</strong> Cumplimiento de obligaciones legales</li>
+                    </ul>
+
+                    <h3>10.3 Mecanismos de Cumplimiento</h3>
+                    <p>Implementamos los siguientes mecanismos:</p>
+                    <ul>
+                        <li><strong>Banner de consentimiento:</strong> Notificación clara sobre cookies</li>
+                        <li><strong>Panel de configuración:</strong> Control granular de preferencias</li>
+                        <li><strong>Registro de consentimiento:</strong> Documentación de consentimientos</li>
+                        <li><strong>Auditorías regulares:</strong> Revisión periódica de cumplimiento</li>
+                    </ul>
+
+                    <h2>11. Seguridad de Cookies</h2>
+                    
+                    <h3>11.1 Medidas de Seguridad</h3>
+                    <p>Implementamos las siguientes medidas de seguridad:</p>
+                    <ul>
+                        <li><strong>Cookies seguras:</strong> Uso de la bandera "Secure" para cookies sensibles</li>
+                        <li><strong>Cookies HttpOnly:</strong> Prevención de acceso desde JavaScript malicioso</li>
+                        <li><strong>SameSite:</strong> Protección contra ataques CSRF</li>
+                        <li><strong>Cifrado:</strong> Transmisión cifrada de datos de cookies</li>
+                        <li><strong>Monitoreo:</strong> Detección de uso anómalo de cookies</li>
+                    </ul>
+
+                    <h3>11.2 Protección de Datos</h3>
+                    <p>Protegemos los datos de cookies mediante:</p>
+                    <ul>
+                        <li><strong>Minimización de datos:</strong> Solo recopilamos datos necesarios</li>
+                        <li><strong>Anonimización:</strong> Eliminación de identificadores personales cuando sea posible</li>
+                        <li><strong>Retención limitada:</strong> Eliminación automática de cookies expiradas</li>
+                        <li><strong>Acceso restringido:</strong> Control estricto de acceso a datos de cookies</li>
+                    </ul>
+
+                    <h2>12. Actualizaciones y Modificaciones</h2>
+                    
+                    <h3>12.1 Proceso de Actualización</h3>
+                    <p>Cuando actualizamos nuestra política de cookies:</p>
+                    <ul>
+                        <li><strong>Notificamos cambios:</strong> A través de nuestro sitio web</li>
+                        <li><strong>Actualizamos fecha:</strong> Modificamos la fecha de "Última actualización"</li>
+                        <li><strong>Revisamos consentimiento:</strong> Solicitamos nuevo consentimiento si es necesario</li>
+                        <li><strong>Comunicamos cambios:</strong> Por email para cambios significativos</li>
+                    </ul>
+
+                    <h3>12.2 Notificación de Cambios</h3>
+                    <p>Los cambios se notifican a través de:</p>
+                    <ul>
+                        <li><strong>Banner en el sitio web:</strong> Aviso destacado sobre cambios</li>
+                        <li><strong>Email a usuarios registrados:</strong> Para cambios significativos</li>
+                        <li><strong>Actualización de versión:</strong> Cambio en el número de versión</li>
+                        <li><strong>Resumen de cambios:</strong> Documento explicativo de modificaciones</li>
+                    </ul>
+
+                    <h2>13. Información de Contacto</h2>
+                    
+                    <h3>13.1 Contacto Principal</h3>
+                    <p><strong>Departamento de Privacidad</strong><br>
+                    <strong>Email:</strong> privacy@tramico.org<br>
+                    <strong>Teléfono:</strong> +52 55 9932 0023<br>
+                    <strong>Horario:</strong> Lunes a Viernes, 9:00 AM - 6:00 PM (GMT-6)</p>
+
+                    <h3>13.2 Contacto para Cookies</h3>
+                    <p>Para consultas específicas sobre cookies:<br>
+                    <strong>Email:</strong> cookies@tramico.org<br>
+                    <strong>Asunto:</strong> "Consulta sobre Política de Cookies"</p>
+
+                    <h3>13.3 Contacto para Ejercicio de Derechos</h3>
+                    <p>Para ejercer tus derechos relacionados con cookies:<br>
+                    <strong>Email:</strong> derechos@tramico.org<br>
+                    <strong>Formulario web:</strong> Disponible en nuestro sitio web</p>
+
+                    <h2>14. Glosario de Términos</h2>
+                    <ul>
+                        <li><strong>Cookie:</strong> Pequeño archivo de texto almacenado en tu dispositivo</li>
+                        <li><strong>Web Beacon:</strong> Imagen transparente utilizada para rastreo</li>
+                        <li><strong>Pixel Tag:</strong> Fragmento de código para rastreo</li>
+                        <li><strong>Local Storage:</strong> Almacenamiento local en el navegador</li>
+                        <li><strong>Session Storage:</strong> Almacenamiento temporal durante la sesión</li>
+                        <li><strong>Third-party Cookie:</strong> Cookie establecida por un dominio diferente</li>
+                        <li><strong>First-party Cookie:</strong> Cookie establecida por el sitio que visitas</li>
+                        <li><strong>Persistent Cookie:</strong> Cookie que permanece después de cerrar el navegador</li>
+                        <li><strong>Session Cookie:</strong> Cookie que se elimina al cerrar el navegador</li>
+                    </ul>
+
+                    <div class="bg-blue-50 border border-blue-200 rounded-lg p-6 mt-8">
+                        <h3 class="text-lg font-semibold text-blue-800 mb-4">Compromiso con la Transparencia en Cookies</h3>
+                        <p class="text-blue-700 mb-4">En TRAMICO, nos comprometemos a:</p>
+                        <ul class="text-blue-700 space-y-2">
+                            <li>• Utilizar cookies de manera transparente y responsable</li>
+                            <li>• Proporcionar control total sobre tus preferencias de cookies</li>
+                            <li>• Proteger tu privacidad y datos personales</li>
+                            <li>• Cumplir con todas las regulaciones de protección de datos</li>
+                            <li>• Mantener información clara sobre el uso de cookies</li>
+                            <li>• Respetar tus derechos de privacidad en todo momento</li>
+                        </ul>
+                    </div>
+
+                    <div class="bg-yellow-50 border border-yellow-200 rounded-lg p-4 mt-6">
+                        <h3 class="text-lg font-semibold text-yellow-800 mb-2">Aviso Legal Importante</h3>
+                        <p class="text-yellow-700">TRAMICO es un servicio privado de asistencia y consultoría especializada en trámites administrativos en México. No somos una institución gubernamental, no estamos afiliados al SAT (Servicio de Administración Tributaria) ni a ninguna entidad oficial mexicana. Todos los trámites se realizan únicamente a través de los canales oficiales correspondientes y con tu autorización expresa. Nuestros servicios consisten en orientación, asesoría y asistencia profesional, pero no garantizamos resultados específicos ni tiempos de procesamiento de las autoridades oficiales. Los resultados finales dependen de las decisiones de las autoridades competentes.</p>
+                    </div>
+
+                    <h2>15. Behavioral Targeting y Re-Targeting</h2>
+                    <p>Nos asociamos con terceros para mostrar publicidad en nuestro sitio web o gestionar nuestra publicidad en otros sitios. Nuestros socios de terceros pueden usar tecnologías como cookies o tecnologías similares para recopilar información sobre tus actividades en este sitio y otros sitios para proporcionarte publicidad basada en tus actividades de navegación e intereses.</p>
+
+                    <h3>15.1 Opciones de Exclusión</h3>
+                    <p>Para excluirte de la publicidad basada en intereses de las empresas participantes en los siguientes mecanismos de elección del consumidor, visita:</p>
+                    <ul>
+                        <li><strong>Digital Advertising Alliance (DAA):</strong> Página de auto-regulación de exclusión y aplicación móvil "AppChoices"</li>
+                        <li><strong>European Interactive Digital Advertising Alliance (EDAA):</strong> Página de exclusión del consumidor</li>
+                        <li><strong>Network Advertising Initiative (NAI):</strong> Página de auto-regulación de exclusión</li>
+                    </ul>
+                    <p><strong>Nota:</strong> Esto no te excluye de recibir anuncios. Continuarás recibiendo anuncios genéricos.</p>
+
+                    <h2>16. Información Automáticamente Recopilada</h2>
+                    <p>Como es cierto de la mayoría de sitios web, recopilamos cierta información automáticamente y la almacenamos en archivos de registro. Esta información puede incluir direcciones de protocolo de Internet (IP), tipo de navegador, proveedor de servicios de Internet (ISP), páginas de referencia/salida, sistema operativo, marca de fecha/hora y/o datos de flujo de clics.</p>
+
+                    <h3>16.1 Uso de Información Automática</h3>
+                    <p>No vinculamos estos datos recopilados automáticamente con otra información que recopilamos sobre ti. Esta información se utiliza para:</p>
+                    <ul>
+                        <li><strong>Análisis de tendencias:</strong> Entender patrones de uso del sitio</li>
+                        <li><strong>Administración del sitio:</strong> Mantener y mejorar el funcionamiento</li>
+                        <li><strong>Seguridad:</strong> Detectar y prevenir actividades maliciosas</li>
+                        <li><strong>Optimización:</strong> Mejorar la experiencia del usuario</li>
+                    </ul>
+
+                    <h2>17. Proveedores de Servicios Específicos</h2>
+                    
+                    <h3>17.1 Agentes de Envío</h3>
+                    <p>Usamos una empresa de envío externa para cumplir órdenes y una empresa de procesamiento de tarjetas de crédito para facturarte por servicios. También empleamos los servicios de un agente de terceros para alojar nuestra función de chat. Estas empresas no retienen, comparten, almacenan o usan información personal identificable para ningún otro propósito.</p>
+
+                    <h3>17.2 Proveedores de Servicios Gubernamentales</h3>
+                    <p>Usamos otros terceros como el SAT y otras entidades gubernamentales para proporcionar servicios de trámites en los sitios. Compartiremos información personal según sea necesario para que el tercero proporcione ese servicio. Estos terceros están prohibidos de usar tu información personal identificable para cualquier otro propósito.</p>
+
+                    <h3>17.3 Proveedores de Tecnología</h3>
+                    <ul>
+                        <li><strong>Plataformas de análisis:</strong> Google Analytics, Hotjar, Crazy Egg</li>
+                        <li><strong>Servicios de pago:</strong> Stripe, PayPal, otros procesadores</li>
+                        <li><strong>Servicios de comunicación:</strong> Email marketing, SMS, chat en vivo</li>
+                        <li><strong>Servicios de seguridad:</strong> Protección contra fraudes, verificación</li>
+                    </ul>
+
+                    <h2>18. Descargo Legal Adicional</h2>
+                    <p>En ciertas situaciones, TRAMICO puede estar obligado a divulgar datos personales en respuesta a solicitudes legítimas de autoridades públicas, incluyendo para cumplir con requisitos de seguridad nacional o aplicación de la ley.</p>
+
+                    <h3>18.1 Circunstancias de Divulgación</h3>
+                    <p>Nos reservamos el derecho de divulgar tu información personal identificable según lo requiera la ley y cuando creamos que la divulgación es necesaria para proteger nuestros derechos y/o cumplir con un procedimiento judicial, orden judicial, procedimientos de bancarrota o proceso legal servido en nuestro sitio web.</p>
+
+                    <h3>18.2 Tipos de Solicitudes Legales</h3>
+                    <ul>
+                        <li><strong>Órdenes judiciales:</strong> Solicitudes de tribunales competentes</li>
+                        <li><strong>Investigaciones gubernamentales:</strong> Solicitudes de autoridades legítimas</li>
+                        <li><strong>Seguridad nacional:</strong> Solicitudes relacionadas con seguridad</li>
+                        <li><strong>Aplicación de la ley:</strong> Solicitudes de agencias policiales</li>
+                    </ul>
+
+                    <h2>19. Cookies en Aplicaciones Móviles</h2>
+                    <p>Además de nuestro sitio web, nuestras aplicaciones móviles también pueden utilizar tecnologías de seguimiento similares a las cookies para recopilar información sobre tu uso de la aplicación.</p>
+
+                    <h3>19.1 Tecnologías de Seguimiento Móvil</h3>
+                    <p>Nuestras aplicaciones móviles pueden utilizar:</p>
+                    <ul>
+                        <li><strong>Identificadores de dispositivo:</strong> Para reconocer tu dispositivo móvil</li>
+                        <li><strong>Datos de ubicación:</strong> Para proporcionar servicios basados en ubicación (solo con consentimiento)</li>
+                        <li><strong>Datos de uso de la aplicación:</strong> Para mejorar la funcionalidad</li>
+                        <li><strong>Tokens de notificación:</strong> Para enviar notificaciones push</li>
+                    </ul>
+
+                    <h3>19.2 Control de Seguimiento Móvil</h3>
+                    <p>Puedes controlar el seguimiento en aplicaciones móviles a través de:</p>
+                    <ul>
+                        <li><strong>Configuración de la aplicación:</strong> Opciones de privacidad dentro de la app</li>
+                        <li><strong>Configuración del dispositivo:</strong> Configuración de privacidad del sistema operativo</li>
+                        <li><strong>Configuración de publicidad:</strong> Opciones de seguimiento de publicidad</li>
+                    </ul>
+
+                    <h2>20. Cookies y Tecnologías Emergentes</h2>
+                    <p>A medida que evoluciona la tecnología, pueden surgir nuevas formas de seguimiento y almacenamiento de datos. Nos comprometemos a mantenerte informado sobre estas tecnologías.</p>
+
+                    <h3>20.1 Tecnologías Futuras</h3>
+                    <p>Podemos adoptar nuevas tecnologías como:</p>
+                    <ul>
+                        <li><strong>Fingerprinting del navegador:</strong> Identificación basada en características del navegador</li>
+                        <li><strong>Machine Learning:</strong> Análisis automatizado de patrones de comportamiento</li>
+                        <li><strong>Realidad Virtual/Aumentada:</strong> Seguimiento en entornos inmersivos</li>
+                        <li><strong>IoT y Dispositivos Conectados:</strong> Seguimiento a través de dispositivos inteligentes</li>
+                    </ul>
+
+                    <h3>20.2 Actualizaciones de Política</h3>
+                    <p>Cuando adoptemos nuevas tecnologías de seguimiento:</p>
+                    <ul>
+                        <li><strong>Notificaremos cambios:</strong> A través de actualizaciones de esta política</li>
+                        <li><strong>Solicitaremos consentimiento:</strong> Para nuevas formas de seguimiento</li>
+                        <li><strong>Proporcionaremos opciones:</strong> Para controlar el seguimiento</li>
+                        <li><strong>Mantendremos transparencia:</strong> Sobre el uso de nuevas tecnologías</li>
+                    </ul>
+
+                    <h2>21. Cookies y Cumplimiento Internacional</h2>
+                    <p>Nuestro sitio web puede ser accesible desde diferentes jurisdicciones, cada una con sus propias regulaciones sobre cookies y privacidad.</p>
+
+                    <h3>21.1 Regulaciones Específicas por Región</h3>
+                    <ul>
+                        <li><strong>Unión Europea (GDPR):</strong> Consentimiento explícito requerido para cookies no esenciales</li>
+                        <li><strong>California (CCPA):</strong> Derecho a saber sobre cookies y opciones de exclusión</li>
+                        <li><strong>México (LFPDPPP):</strong> Principios de licitud, consentimiento e información</li>
+                        <li><strong>Canadá (PIPEDA):</strong> Consentimiento significativo para cookies de seguimiento</li>
+                    </ul>
+
+                    <h3>21.2 Adaptación Automática</h3>
+                    <p>Nuestro sistema detecta automáticamente tu ubicación y aplica las regulaciones correspondientes:</p>
+                    <ul>
+                        <li><strong>Banner de consentimiento:</strong> Adaptado según tu jurisdicción</li>
+                        <li><strong>Opciones de control:</strong> Específicas para tu región</li>
+                        <li><strong>Información legal:</strong> Relevante para tu jurisdicción</li>
+                    </ul>
+
+                    <h2>22. Cookies y Accesibilidad</h2>
+                    <p>Nos comprometemos a hacer que nuestras opciones de cookies sean accesibles para todos los usuarios, incluyendo aquellos con discapacidades.</p>
+
+                    <h3>22.1 Características de Accesibilidad</h3>
+                    <ul>
+                        <li><strong>Navegación por teclado:</strong> Control completo mediante teclado</li>
+                        <li><strong>Compatibilidad con lectores de pantalla:</strong> Etiquetas ARIA apropiadas</li>
+                        <li><strong>Alto contraste:</strong> Opciones de visualización mejoradas</li>
+                        <li><strong>Texto ampliable:</strong> Capacidad de aumentar el tamaño del texto</li>
+                    </ul>
+
+                    <h3>22.2 Asistencia para Usuarios con Discapacidades</h3>
+                    <p>Si tienes dificultades para gestionar tus preferencias de cookies:</p>
+                    <ul>
+                        <li><strong>Contacto directo:</strong> Llámanos al +52 55 9932 0023</li>
+                        <li><strong>Email de asistencia:</strong> accessibility@tramico.org</li>
+                        <li><strong>Formulario web:</strong> Disponible en nuestro sitio</li>
+                        <li><strong>Asistencia en vivo:</strong> Chat en vivo con soporte especializado</li>
+                    </ul>
+
+                    <h2>23. Cookies y Seguridad Avanzada</h2>
+                    <p>Implementamos medidas de seguridad avanzadas para proteger los datos recopilados a través de cookies.</p>
+
+                    <h3>23.1 Medidas de Seguridad Técnicas</h3>
+                    <ul>
+                        <li><strong>Cifrado de extremo a extremo:</strong> Para transmisión segura de datos</li>
+                        <li><strong>Tokens de seguridad:</strong> Para autenticación segura</li>
+                        <li><strong>Monitoreo de anomalías:</strong> Detección de uso sospechoso</li>
+                        <li><strong>Backup seguro:</strong> Respaldo cifrado de datos</li>
+                    </ul>
+
+                    <h3>23.2 Protección contra Ataques</h3>
+                    <ul>
+                        <li><strong>Protección CSRF:</strong> Contra ataques de falsificación de solicitudes</li>
+                        <li><strong>Validación de entrada:</strong> Para prevenir inyección de código</li>
+                        <li><strong>Rate limiting:</strong> Para prevenir abuso de cookies</li>
+                        <li><strong>Sanitización de datos:</strong> Limpieza de datos de entrada</li>
+                    </ul>
+
+                    <h2>24. Cookies y Análisis Predictivo</h2>
+                    <p>Utilizamos análisis predictivo basado en cookies para mejorar nuestros servicios y experiencia del usuario.</p>
+
+                    <h3>24.1 Tipos de Análisis Predictivo</h3>
+                    <ul>
+                        <li><strong>Análisis de comportamiento:</strong> Para predecir necesidades del usuario</li>
+                        <li><strong>Optimización de contenido:</strong> Para mostrar contenido relevante</li>
+                        <li><strong>Detección de fraudes:</strong> Para identificar actividades sospechosas</li>
+                        <li><strong>Mejora de servicios:</strong> Para optimizar funcionalidades</li>
+                    </ul>
+
+                    <h3>24.2 Control del Análisis Predictivo</h3>
+                    <p>Puedes controlar el análisis predictivo:</p>
+                    <ul>
+                        <li><strong>Desactivar análisis:</strong> A través de nuestras opciones de cookies</li>
+                        <li><strong>Excluirte de análisis:</strong> Solicitar exclusión de análisis predictivo</li>
+                        <li><strong>Acceder a datos:</strong> Solicitar información sobre análisis aplicado</li>
+                        <li><strong>Rectificar datos:</strong> Corregir información utilizada en análisis</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Professional Footer -->
+    <footer class="bg-gray-900 text-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Company Info -->
+                <div class="col-span-1 md:col-span-2">
+                    <h3 class="text-xl font-bold mb-4">TRAMICO</h3>
+                    <p class="text-gray-300 mb-4">Servicios profesionales de asistencia para trámites oficiales en México. Somos un servicio privado de consultoría y asistencia especializada en procedimientos administrativos.</p>
+                </div>
+
+                <!-- Legal & Important Links -->
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Información Legal</h4>
+                    <ul class="space-y-2 text-gray-300">
+                        <li><a href="privacy.html" class="hover:text-white transition-colors">Política de Privacidad</a></li>
+                        <li><a href="terms.html" class="hover:text-white transition-colors">Términos de Servicio</a></li>
+                        <li><a href="aviso.html" class="hover:text-white transition-colors">Aviso Legal</a></li>
+                        <li><a href="refund.html" class="hover:text-white transition-colors">Política de Reembolso</a></li>
+                        <li><a href="cookies.html" class="hover:text-white transition-colors">Política de Cookies</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Legal Disclaimer Section -->
+            <div class="border-t border-gray-800 mt-8 pt-8">
+                <div class="bg-gray-800 rounded-lg p-6 mb-6">
+                    <h4 class="text-lg font-semibold text-white mb-4">Aviso Legal Importante</h4>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 text-sm text-gray-300">
+                        <div>
+                            <h5 class="font-semibold text-white mb-2">Servicio Privado</h5>
+                            <p class="mb-3">TRAMICO es un servicio privado de asistencia y consultoría. No somos una institución gubernamental ni estamos afiliados al SAT o cualquier entidad oficial.</p>
+                            
+                            <h5 class="font-semibold text-white mb-2">Limitación de Responsabilidad</h5>
+                            <p class="mb-3">Nuestros servicios se basan en la información proporcionada por el cliente. No garantizamos resultados específicos ni tiempos de procesamiento.</p>
+                        </div>
+                        <div>
+                            <h5 class="font-semibold text-white mb-2">Autorización del Cliente</h5>
+                            <p class="mb-3">Todos los trámites se realizan únicamente con la autorización expresa del cliente y a través de los canales oficiales correspondientes.</p>
+                            
+                            <h5 class="font-semibold text-white mb-2">Confidencialidad</h5>
+                            <p class="mb-3">Toda la información proporcionada por nuestros clientes es tratada con estricta confidencialidad según nuestra política de privacidad.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Bottom Section -->
+            <div class="border-t border-gray-800 pt-8">
+                <div class="flex flex-col md:flex-row justify-between items-center">
+                    <div class="text-gray-400 text-sm mb-4 md:mb-0">
+                        <p>&copy; 2024 TRAMICO. Todos los derechos reservados.</p>
+                        <p class="mt-1">Servicio privado de asistencia. No afiliado al SAT ni a instituciones gubernamentales.</p>
+                        <p class="mt-1">Registro de marca en trámite. RFC: En proceso de obtención.</p>
+                    </div>
+                    <div class="flex space-x-6 text-sm text-gray-400">
+                        <a href="contact.html" class="hover:text-white transition-colors">Contacto</a>
+                        <a href="about.html" class="hover:text-white transition-colors">Sobre Nosotros</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Cookie Banner - Optimized and Accessible -->
+    <div id="cookie-banner" 
+         class="fixed bottom-0 left-0 right-0 bg-white border-t border-gray-200 shadow-lg z-50 transform translate-y-full transition-transform duration-300"
+         role="dialog" 
+         aria-labelledby="cookie-title" 
+         aria-describedby="cookie-description"
+         aria-modal="true">
+        <div class="max-w-7xl mx-auto px-4 py-6">
+            <div class="flex flex-col lg:flex-row items-start lg:items-center justify-between gap-6">
+                <div class="flex items-start gap-4 flex-1 max-w-4xl">
+                    <div class="flex-shrink-0 mt-1" aria-hidden="true">
+                        <svg class="w-6 h-6 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" role="img" aria-label="Icono de privacidad">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"></path>
+                        </svg>
+                    </div>
+                    <div class="flex-1">
+                        <h3 id="cookie-title" class="text-lg font-semibold text-gray-900 mb-3">Tu privacidad es importante para nosotros</h3>
+                        <div id="cookie-description" class="space-y-3">
+                            <p class="text-sm text-gray-700 leading-relaxed">
+                                En TRAMICO utilizamos tecnologías de almacenamiento local para garantizar el correcto funcionamiento de nuestro sitio web y mejorar tu experiencia de navegación. Estas tecnologías incluyen cookies técnicas esenciales para la operación del sitio, así como cookies analíticas que nos ayudan a comprender cómo interactúas con nuestra plataforma para optimizar su rendimiento.
+                            </p>
+                            <p class="text-sm text-gray-700 leading-relaxed">
+                                Las cookies técnicas son necesarias para el funcionamiento básico del sitio y se instalan automáticamente. Las cookies analíticas y de preferencias son opcionales y solo se activan con tu consentimiento explícito. Puedes gestionar tus preferencias en cualquier momento a través de nuestra Política de Cookies o configurando tu navegador.
+                            </p>
+                            <p class="text-sm text-gray-700 leading-relaxed">
+                                TRAMICO es responsable del procesamiento de estos datos según lo establecido en nuestra Política de Privacidad. Tu consentimiento no es obligatorio para navegar por nuestro sitio, excepto para las cookies técnicas esenciales. Puedes cambiar o revocar tu consentimiento en cualquier momento.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="button-group flex flex-col sm:flex-row gap-3 flex-shrink-0 min-w-fit" role="group" aria-label="Opciones de cookies">
+                    <button id="accept-cookies" 
+                            class="bg-blue-600 text-white text-sm font-medium rounded-lg hover:bg-blue-700 transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 whitespace-nowrap"
+                            aria-describedby="accept-description">
+                        Aceptar todas las cookies
+                        <span id="accept-description" class="sr-only">Acepta todas las cookies incluyendo analíticas y de preferencias</span>
+                    </button>
+                    <button id="configure-cookies" 
+                            class="bg-gray-100 text-gray-700 text-sm font-medium rounded-lg hover:bg-gray-200 transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-gray-500 focus:ring-offset-2 whitespace-nowrap"
+                            aria-describedby="configure-description">
+                        Configurar preferencias
+                        <span id="configure-description" class="sr-only">Abre opciones para configurar tipos específicos de cookies</span>
+                    </button>
+                    <a href="cookies.html" 
+                       class="text-sm text-blue-600 hover:text-blue-700 underline text-center sm:text-left focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 rounded whitespace-nowrap"
+                       aria-describedby="policy-description">
+                        Política de cookies
+                        <span id="policy-description" class="sr-only">Enlace a la política completa de cookies</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Cookie Preferences Modal -->
+    <div id="cookie-modal" class="fixed inset-0 bg-black bg-opacity-50 z-50 hidden items-center justify-center p-4" role="dialog" aria-labelledby="modal-title" aria-describedby="modal-description">
+        <div class="modal-content bg-white rounded-xl max-w-md w-full max-h-90vh overflow-y-auto shadow-2xl">
+            <div class="p-6">
+                <div class="flex items-center justify-between mb-6">
+                    <h2 id="modal-title" class="text-xl font-semibold text-gray-900">Configurar Cookies</h2>
+                    <button id="close-modal" class="text-gray-400 hover:text-gray-600 transition-colors" aria-label="Cerrar modal">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                        </svg>
+                    </button>
+                </div>
+                
+                <div id="modal-description" class="space-y-4 mb-6">
+                    <p class="text-sm text-gray-700 leading-relaxed">
+                        Selecciona qué tipos de cookies deseas permitir en este sitio web:
+                    </p>
+                    
+                    <div class="space-y-4">
+                        <!-- Essential Cookies (Always enabled) -->
+                        <div class="border border-gray-200 rounded-lg p-4 bg-gray-50">
+                            <div class="flex items-center justify-between mb-2">
+                                <label class="text-sm font-medium text-gray-900">Cookies Esenciales</label>
+                                <span class="text-xs bg-green-100 text-green-800 px-2 py-1 rounded-full">Siempre activas</span>
+                            </div>
+                            <p class="text-xs text-gray-600">
+                                Necesarias para el funcionamiento básico del sitio web. No se pueden desactivar.
+                            </p>
+                        </div>
+                        
+                        <!-- Analytics Cookies -->
+                        <div class="border border-gray-200 rounded-lg p-4">
+                            <div class="flex items-center justify-between mb-2">
+                                <label for="analytics-toggle" class="text-sm font-medium text-gray-900">Cookies Analíticas</label>
+                                <div class="relative">
+                                    <input type="checkbox" id="analytics-toggle" class="sr-only" checked>
+                                    <div class="w-10 h-6 bg-gray-200 rounded-full transition-colors duration-200" id="analytics-switch">
+                                        <div class="w-4 h-4 bg-white rounded-full shadow transform transition-transform duration-200" id="analytics-thumb" style="transform: translateX(24px);"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <p class="text-xs text-gray-600">
+                                Nos ayudan a entender cómo utilizas el sitio para mejorar su rendimiento.
+                            </p>
+                        </div>
+                        
+                        <!-- Preference Cookies -->
+                        <div class="border border-gray-200 rounded-lg p-4">
+                            <div class="flex items-center justify-between mb-2">
+                                <label for="preference-toggle" class="text-sm font-medium text-gray-900">Cookies de Preferencias</label>
+                                <div class="relative">
+                                    <input type="checkbox" id="preference-toggle" class="sr-only" checked>
+                                    <div class="w-10 h-6 bg-gray-200 rounded-full transition-colors duration-200" id="preference-switch">
+                                        <div class="w-4 h-4 bg-white rounded-full shadow transform transition-transform duration-200" id="preference-thumb" style="transform: translateX(24px);"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <p class="text-xs text-gray-600">
+                                Permiten recordar tus preferencias y configuraciones personalizadas.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="flex flex-col sm:flex-row gap-3">
+                    <button id="save-preferences" 
+                            class="bg-blue-600 text-white text-sm font-medium rounded-lg px-4 py-2 hover:bg-blue-700 transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2">
+                        Guardar Preferencias
+                    </button>
+                    <button id="reject-all" 
+                            class="bg-gray-100 text-gray-700 text-sm font-medium rounded-lg px-4 py-2 hover:bg-gray-200 transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-gray-500 focus:ring-offset-2">
+                        Rechazar Todas
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Mobile menu functionality
+            const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+            const sidebar = document.getElementById('sidebar');
+            const sidebarContent = document.getElementById('sidebar-content');
+            const closeSidebarBtn = document.getElementById('close-sidebar');
+            const sidebarOverlay = document.getElementById('sidebar-overlay');
+            
+            function disableScroll() {
+                document.body.style.overflow = 'hidden';
+                document.documentElement.style.overflow = 'hidden';
+            }
+            
+            function enableScroll() {
+                document.body.style.overflow = '';
+                document.documentElement.style.overflow = '';
+            }
+            
+            mobileMenuBtn.addEventListener('click', function() {
+                const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+                sidebar.style.top = '0';
+                sidebar.classList.remove('-translate-x-full');
+                sidebar.classList.add('translate-x-0');
+                sidebarOverlay.classList.remove('opacity-0', 'pointer-events-none');
+                sidebarOverlay.classList.add('opacity-100');
+                mobileMenuBtn.style.display = 'none';
+                disableScroll();
+                
+                // Force mobile menu to be visible and properly positioned
+                sidebar.style.transform = 'translateX(0)';
+                sidebar.style.zIndex = '50';
+                
+                // Ensure the sidebar is positioned correctly at current scroll position
+                requestAnimationFrame(() => {
+                    sidebar.style.top = '0';
+                });
+            });
+            
+            function closeMobileMenu() {
+                sidebar.classList.remove('translate-x-0');
+                sidebar.classList.add('-translate-x-full');
+                sidebarOverlay.classList.remove('opacity-100');
+                sidebarOverlay.classList.add('opacity-0', 'pointer-events-none');
+                sidebar.style.top = '';
+                sidebar.style.transform = '';
+                sidebar.style.zIndex = '';
+                mobileMenuBtn.style.display = '';
+                enableScroll();
+            }
+            
+            closeSidebarBtn.addEventListener('click', closeMobileMenu);
+            sidebarOverlay.addEventListener('click', closeMobileMenu);
+            
+            document.addEventListener('keydown', function(e) {
+                if (e.key === 'Escape') {
+                    closeMobileMenu();
+                }
+            });
+            
+            const navLinks = sidebar.querySelectorAll('a');
+            navLinks.forEach(link => {
+                link.addEventListener('click', function() {
+                    if (window.innerWidth < 1024) {
+                        closeMobileMenu();
+                    }
+                });
+            });
+            
+            window.addEventListener('resize', function() {
+                if (window.innerWidth >= 1024) {
+                    sidebar.classList.remove('-translate-x-full', 'translate-x-0');
+                    sidebar.classList.add('lg:translate-x-0');
+                    sidebarOverlay.classList.remove('opacity-100');
+                    sidebarOverlay.classList.add('opacity-0', 'pointer-events-none');
+                } else {
+                    sidebar.classList.remove('lg:translate-x-0');
+                    sidebar.classList.add('-translate-x-full');
+                    sidebarOverlay.classList.remove('opacity-100');
+                    sidebarOverlay.classList.add('opacity-0', 'pointer-events-none');
+                }
+            });
+
+                               // Optimized Cookie Banner Functionality
+                   const cookieBanner = document.getElementById('cookie-banner');
+                   const acceptBtn = document.getElementById('accept-cookies');
+                   const configureBtn = document.getElementById('configure-cookies');
+                   
+                   // Performance optimization: Use requestAnimationFrame for smooth animations
+                   function showCookieBanner() {
+                       requestAnimationFrame(() => {
+                           cookieBanner.classList.add('show');
+                           // Add focus trap for accessibility
+                           cookieBanner.setAttribute('aria-hidden', 'false');
+                       });
+                   }
+                   
+                   function hideCookieBanner() {
+                       cookieBanner.classList.remove('show');
+                       cookieBanner.setAttribute('aria-hidden', 'true');
+                       setTimeout(() => {
+                           cookieBanner.style.display = 'none';
+                       }, 400); // Match CSS transition duration
+                   }
+                   
+                   // Check if user has already made a choice
+                   const cookieChoice = localStorage.getItem('cookieChoice');
+                   const cookieTimestamp = localStorage.getItem('cookieTimestamp');
+                   
+                   // Show banner if no choice made or if choice is older than 30 days
+                   const shouldShowBanner = !cookieChoice || 
+                       (cookieTimestamp && (Date.now() - new Date(cookieTimestamp).getTime()) > 30 * 24 * 60 * 60 * 1000);
+                   
+                   if (shouldShowBanner) {
+                       // Delay to ensure page is fully loaded
+                       setTimeout(showCookieBanner, 1000);
+                   } else {
+                       // Hide banner if user has already made a choice
+                       cookieBanner.style.display = 'none';
+                   }
+                   
+                   // Optimized event listeners with error handling
+                   acceptBtn.addEventListener('click', function(e) {
+                       e.preventDefault();
+                       try {
+                           localStorage.setItem('cookieChoice', 'accepted');
+                           localStorage.setItem('cookieTimestamp', new Date().toISOString());
+                           hideCookieBanner();
+                           
+                           // Optional: Track consent for analytics
+                           if (typeof gtag !== 'undefined') {
+                               gtag('consent', 'update', {
+                                   'analytics_storage': 'granted',
+                                   'ad_storage': 'granted'
+                               });
+                           }
+                       } catch (error) {
+                           console.warn('Failed to save cookie preference:', error);
+                           hideCookieBanner();
+                       }
+                   });
+                   
+                   // Cookie preferences modal functionality
+                   const cookieModal = document.getElementById('cookie-modal');
+                   const closeModalBtn = document.getElementById('close-modal');
+                   const savePreferencesBtn = document.getElementById('save-preferences');
+                   const rejectAllBtn = document.getElementById('reject-all');
+                   const analyticsToggle = document.getElementById('analytics-toggle');
+                   const preferenceToggle = document.getElementById('preference-toggle');
+                   const analyticsSwitch = document.getElementById('analytics-switch');
+                   const analyticsThumb = document.getElementById('analytics-thumb');
+                   const preferenceSwitch = document.getElementById('preference-switch');
+                   const preferenceThumb = document.getElementById('preference-thumb');
+                   
+                   // Toggle switch functionality
+                   function toggleSwitch(toggle, switchEl, thumb) {
+                       if (toggle.checked) {
+                           switchEl.classList.remove('bg-gray-200');
+                           switchEl.classList.add('bg-blue-600');
+                           thumb.style.transform = 'translateX(24px)';
+                       } else {
+                           switchEl.classList.remove('bg-blue-600');
+                           switchEl.classList.add('bg-gray-200');
+                           thumb.style.transform = 'translateX(0px)';
+                       }
+                   }
+                   
+                   // Initialize toggle switches
+                   toggleSwitch(analyticsToggle, analyticsSwitch, analyticsThumb);
+                   toggleSwitch(preferenceToggle, preferenceSwitch, preferenceThumb);
+                   
+                   // Toggle switch event listeners
+                   analyticsSwitch.addEventListener('click', function() {
+                       analyticsToggle.checked = !analyticsToggle.checked;
+                       toggleSwitch(analyticsToggle, analyticsSwitch, analyticsThumb);
+                   });
+                   
+                   preferenceSwitch.addEventListener('click', function() {
+                       preferenceToggle.checked = !preferenceToggle.checked;
+                       toggleSwitch(preferenceToggle, preferenceSwitch, preferenceThumb);
+                   });
+                   
+                   // Modal functions
+                   function showModal() {
+                       cookieModal.classList.remove('hidden');
+                       cookieModal.classList.add('show');
+                       document.body.style.overflow = 'hidden';
+                       
+                       // Focus trap for modal
+                       const focusableElements = cookieModal.querySelectorAll(
+                           'button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])'
+                       );
+                       if (focusableElements.length > 0) {
+                           focusableElements[0].focus();
+                       }
+                   }
+                   
+                   function hideModal() {
+                       cookieModal.classList.remove('show');
+                       cookieModal.classList.add('hidden');
+                       document.body.style.overflow = '';
+                   }
+                   
+                   // Configure button functionality
+                   configureBtn.addEventListener('click', function(e) {
+                       e.preventDefault();
+                       hideCookieBanner();
+                       showModal();
+                   });
+                   
+                   // Close modal events
+                   closeModalBtn.addEventListener('click', hideModal);
+                   cookieModal.addEventListener('click', function(e) {
+                       if (e.target === cookieModal) {
+                           hideModal();
+                       }
+                   });
+                   
+                   // Save preferences functionality
+                   savePreferencesBtn.addEventListener('click', function() {
+                       try {
+                           const preferences = {
+                               analytics: analyticsToggle.checked,
+                               preferences: preferenceToggle.checked,
+                               essential: true // Always true
+                           };
+                           
+                           localStorage.setItem('cookieChoice', 'configured');
+                           localStorage.setItem('cookiePreferences', JSON.stringify(preferences));
+                           localStorage.setItem('cookieTimestamp', new Date().toISOString());
+                           
+                           hideModal();
+                           
+                           // Optional: Track consent for analytics
+                           if (typeof gtag !== 'undefined') {
+                               gtag('consent', 'update', {
+                                   'analytics_storage': preferences.analytics ? 'granted' : 'denied',
+                                   'ad_storage': preferences.preferences ? 'granted' : 'denied'
+                               });
+                           }
+                           
+                           console.log('Cookie preferences saved:', preferences);
+                       } catch (error) {
+                           console.warn('Failed to save cookie preferences:', error);
+                           hideModal();
+                       }
+                   });
+                   
+                   // Reject all functionality
+                   rejectAllBtn.addEventListener('click', function() {
+                       try {
+                           const preferences = {
+                               analytics: false,
+                               preferences: false,
+                               essential: true // Always true
+                           };
+                           
+                           localStorage.setItem('cookieChoice', 'rejected');
+                           localStorage.setItem('cookiePreferences', JSON.stringify(preferences));
+                           localStorage.setItem('cookieTimestamp', new Date().toISOString());
+                           
+                           hideModal();
+                           
+                           // Optional: Track consent for analytics
+                           if (typeof gtag !== 'undefined') {
+                               gtag('consent', 'update', {
+                                   'analytics_storage': 'denied',
+                                   'ad_storage': 'denied'
+                               });
+                           }
+                           
+                           console.log('All cookies rejected except essential');
+                       } catch (error) {
+                           console.warn('Failed to save cookie preferences:', error);
+                           hideModal();
+                       }
+                   });
+                   
+                   // Keyboard navigation for modal
+                   cookieModal.addEventListener('keydown', function(e) {
+                       if (e.key === 'Escape') {
+                           hideModal();
+                       }
+                   });
+                   
+                   // Keyboard navigation support
+                   cookieBanner.addEventListener('keydown', function(e) {
+                       if (e.key === 'Escape') {
+                           hideCookieBanner();
+                       }
+                   });
+                   
+                   // Focus management for accessibility
+                   function trapFocus(element) {
+                const focusableElements = element.querySelectorAll(
+                    'button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])'
+                );
+                const firstElement = focusableElements[0];
+                const lastElement = focusableElements[focusableElements.length - 1];
+                
+                if (firstElement) {
+                    firstElement.focus();
+                }
+                
+                element.addEventListener('keydown', function(e) {
+                    if (e.key === 'Tab') {
+                        if (e.shiftKey) {
+                            if (document.activeElement === firstElement) {
+                                e.preventDefault();
+                                lastElement.focus();
+                            }
+                        } else {
+                            if (document.activeElement === lastElement) {
+                                e.preventDefault();
+                                firstElement.focus();
+                            }
+                        }
+                    }
+                });
+            }
+
+            // Apply focus trap when banner shows
+            cookieBanner.addEventListener('transitionend', function() {
+                if (cookieBanner.classList.contains('show')) {
+                    trapFocus(cookieBanner);
+                }
+            });
+
+           
+
+            // Add hover effects - EXCLUDING cookie banner, body, mobile sidebar, and toggle switches
+            const allBgWhiteElements = document.querySelectorAll('.bg-white');
+            allBgWhiteElements.forEach(card => {
+                // Skip the cookie banner completely
+                if (card.id === 'cookie-banner') {
+                    return;
+                }
+                
+                // Skip body element
+                if (card.tagName === 'BODY') {
+                    return;
+                }
+                
+                // Skip mobile sidebar
+                if (card.id === 'sidebar') {
+                    return;
+                }
+                
+                // Skip toggle switch thumbs
+                if (card.id === 'analytics-thumb' || card.id === 'preference-thumb') {
+                    return;
+                }
+                
+                // Double check - skip if it's the cookie banner
+                if (card === cookieBanner) {
+                    return;
+                }
+                
+                card.addEventListener('mouseenter', function() {
+                    // Extra safety check
+                    if (this.id === 'cookie-banner' || this.tagName === 'BODY' || this.id === 'sidebar' || this.id === 'analytics-thumb' || this.id === 'preference-thumb') {
+                        return;
+                    }
+                    this.style.transform = 'translateY(-2px)';
+                });
+                card.addEventListener('mouseleave', function() {
+                    // Extra safety check
+                    if (this.id === 'cookie-banner' || this.tagName === 'BODY' || this.id === 'sidebar' || this.id === 'analytics-thumb' || this.id === 'preference-thumb') {
+                        return;
+                    }
+                    this.style.transform = 'translateY(0)';
+                });
+            });
+        });
+    </script>
+</body>
+</html> 

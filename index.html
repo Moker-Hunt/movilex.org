@@ -3,11 +3,274 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Movilex - RFC Services</title>
+    <title>TRAMICO - Services</title>
     <meta name="description" content="Servicios profesionales de asistencia para trámites RFC ante el SAT. No somos una institución gubernamental.">
     <meta name="keywords" content="RFC, SAT, trámites, México, asistencia, servicios profesionales">
+    
+    <!-- Performance and SEO optimizations -->
+    <meta name="robots" content="index, follow">
+    <meta name="author" content="TRAMICO">
+    <meta name="theme-color" content="#3b82f6">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+    
+    <!-- Preload critical resources -->
+    <link rel="preload" href="dist/output.css" as="style">
+    <link rel="preload" href="img/favicon.ico" as="image">
+    
+    <!-- DNS prefetch for external resources -->
+    <link rel="dns-prefetch" href="//fonts.googleapis.com">
+    <link rel="dns-prefetch" href="//fonts.gstatic.com">
     <link rel="stylesheet" href="dist/output.css">
     <link rel="icon" type="image/x-icon" href="img/favicon.ico">
+    <style>
+        /* Cookie Banner - Optimized and responsive */
+        #cookie-banner {
+            position: fixed !important;
+            bottom: 0 !important;
+            left: 0 !important;
+            right: 0 !important;
+            z-index: 9999 !important;
+            transform: translateY(100%) !important;
+            transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1) !important;
+            pointer-events: auto !important;
+            will-change: transform !important;
+            backface-visibility: hidden !important;
+            contain: layout style paint !important;
+            background: rgba(255, 255, 255, 0.98) !important;
+            backdrop-filter: blur(10px) !important;
+            -webkit-backdrop-filter: blur(10px) !important;
+        }
+        
+        #cookie-banner.show {
+            transform: translateY(0) !important;
+        }
+        
+        /* Optimized animations for children */
+        #cookie-banner * {
+            transform: none !important;
+            transition: color 0.2s ease, background-color 0.2s ease, border-color 0.2s ease !important;
+        }
+        
+        /* Prevent any hover effects on cookie banner */
+        #cookie-banner:hover {
+            transform: translateY(100%) !important;
+        }
+        
+        #cookie-banner.show:hover {
+            transform: translateY(0) !important;
+        }
+        
+        /* Compact button layout */
+        #cookie-banner .button-group {
+            display: flex !important;
+            flex-direction: row !important;
+            gap: 0.5rem !important;
+            align-items: center !important;
+            flex-wrap: wrap !important;
+        }
+        
+        #cookie-banner .button-group button {
+            flex: 0 0 auto !important;
+            min-width: fit-content !important;
+            white-space: nowrap !important;
+            padding: 0.5rem 1rem !important;
+        }
+        
+        #cookie-banner .button-group a {
+            flex: 0 0 auto !important;
+            min-width: fit-content !important;
+            white-space: nowrap !important;
+        }
+        
+        /* Cookie preferences modal */
+        #cookie-modal {
+            position: fixed !important;
+            top: 0 !important;
+            left: 0 !important;
+            right: 0 !important;
+            bottom: 0 !important;
+            background: rgba(0, 0, 0, 0.5) !important;
+            z-index: 10000 !important;
+            display: none !important;
+            align-items: center !important;
+            justify-content: center !important;
+            padding: 1rem !important;
+        }
+        
+        #cookie-modal.show {
+            display: flex !important;
+        }
+        
+        #cookie-modal .modal-content {
+            background: white !important;
+            border-radius: 0.75rem !important;
+            max-width: 32rem !important;
+            width: 100% !important;
+            max-height: 90vh !important;
+            overflow-y: auto !important;
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25) !important;
+        }
+        
+        /* Responsive optimizations */
+        @media (max-width: 768px) {
+            #cookie-banner {
+                padding: 0 1rem !important;
+            }
+            
+            #cookie-banner .max-w-7xl {
+                padding: 1rem 0 !important;
+            }
+            
+            #cookie-banner h3 {
+                font-size: 1.125rem !important;
+                line-height: 1.5 !important;
+            }
+            
+            #cookie-banner p {
+                font-size: 0.875rem !important;
+                line-height: 1.6 !important;
+            }
+            
+            #cookie-banner .button-group {
+                flex-direction: column !important;
+                gap: 0.5rem !important;
+            }
+            
+            #cookie-banner .button-group button {
+                width: 100% !important;
+                padding: 0.5rem 1rem !important;
+            }
+            
+            #cookie-banner .button-group a {
+                width: 100% !important;
+                text-align: center !important;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            #cookie-banner {
+                padding: 0 0.75rem !important;
+            }
+            
+            #cookie-banner .max-w-7xl {
+                padding: 0.75rem 0 !important;
+            }
+            
+            #cookie-banner h3 {
+                font-size: 1rem !important;
+            }
+            
+            #cookie-banner p {
+                font-size: 0.8125rem !important;
+            }
+        }
+        
+        /* Wide screen optimizations */
+        @media (min-width: 1536px) {
+            #cookie-banner .max-w-7xl {
+                max-width: 90rem !important;
+                padding-left: 2rem !important;
+                padding-right: 2rem !important;
+            }
+            
+            #cookie-banner {
+                padding: 0 2rem !important;
+            }
+            
+            #cookie-banner h3 {
+                font-size: 1.25rem !important;
+            }
+            
+            #cookie-banner p {
+                font-size: 1rem !important;
+                line-height: 1.7 !important;
+            }
+            
+            #cookie-banner .button-group button {
+                padding: 0.75rem 1.25rem !important;
+                font-size: 1rem !important;
+            }
+            
+            #cookie-banner .button-group a {
+                padding: 0.75rem 1.25rem !important;
+                font-size: 1rem !important;
+            }
+        }
+        
+        @media (min-width: 1920px) {
+            #cookie-banner .max-w-7xl {
+                max-width: 100rem !important;
+                padding-left: 3rem !important;
+                padding-right: 3rem !important;
+            }
+            
+            #cookie-banner {
+                padding: 0 3rem !important;
+            }
+            
+            #cookie-banner h3 {
+                font-size: 1.375rem !important;
+            }
+            
+            #cookie-banner p {
+                font-size: 1.125rem !important;
+                line-height: 1.8 !important;
+            }
+            
+            #cookie-banner .button-group button {
+                padding: 0.875rem 1.5rem !important;
+                font-size: 1.125rem !important;
+            }
+            
+            #cookie-banner .button-group a {
+                padding: 0.875rem 1.5rem !important;
+                font-size: 1.125rem !important;
+            }
+            
+            #cookie-banner svg {
+                width: 1.75rem !important;
+                height: 1.75rem !important;
+            }
+        }
+        
+        /* High contrast mode support */
+        @media (prefers-contrast: high) {
+            #cookie-banner {
+                border-top: 2px solid #000 !important;
+                background: #fff !important;
+            }
+            
+            #cookie-banner button {
+                border: 2px solid currentColor !important;
+            }
+        }
+        
+        /* Reduced motion support */
+        @media (prefers-reduced-motion: reduce) {
+            #cookie-banner {
+                transition: transform 0.1s ease !important;
+            }
+            
+            #cookie-banner * {
+                transition: none !important;
+            }
+        }
+        
+        /* Focus styles for accessibility */
+        #cookie-banner button:focus,
+        #cookie-banner a:focus {
+            outline: 2px solid #3b82f6 !important;
+            outline-offset: 2px !important;
+        }
+        
+        /* Print styles */
+        @media print {
+            #cookie-banner {
+                display: none !important;
+            }
+        }
+    </style>
 </head>
 <body class="bg-white">
     <!-- Top Banner -->
@@ -29,7 +292,7 @@
         </div>
 
         <!-- Left Sidebar -->
-                        <div id="sidebar" class="fixed lg:sticky lg:top-0 inset-0 z-40 lg:z-auto transform -translate-x-full lg:translate-x-0 transition-transform duration-300 ease-in-out lg:transition-none" style="top: 0; height: 100vh;">
+                        <div id="sidebar" class="fixed lg:sticky lg:top-0 inset-0 z-40 lg:z-auto transform -translate-x-full lg:translate-x-0 transition-transform duration-300 ease-in-out lg:transition-none" style="height: 100vh;">
             <div class="lg:hidden fixed inset-0 bg-black bg-opacity-50 z-30 opacity-0 pointer-events-none transition-opacity duration-300" id="sidebar-overlay"></div>
             <div class="relative bg-gray-50 border-r border-gray-200 w-80 h-full lg:h-auto overflow-y-auto z-40 p-4 lg:p-8 lg:sticky lg:top-0 max-h-screen lg:max-h-none" id="sidebar-content">
                 <!-- Close button for mobile -->
@@ -41,7 +304,7 @@
                     </button>
                 </div>
                 <div class="mb-8">
-                    <h1 class="text-2xl font-bold text-accent-600">MOVILEX</h1>
+                    <h1 class="text-2xl font-bold text-accent-600">TRAMICO</h1>
                 </div>
             
                 <nav class="space-y-4 mb-8">
@@ -83,7 +346,7 @@
                     <h3 class="font-semibold text-gray-900 mb-3">Contacto Rápido</h3>
                     <div class="space-y-2 text-sm">
                         <p class="text-gray-600">📞 +52 55 9932 0023</p>
-                        <p class="text-gray-600">📧 admin@movilex.org</p>
+                        <p class="text-gray-600">📧 admin@tramico.org</p>
                         <p class="text-gray-600">🕒 Lun-Vie: 9:00-18:00</p>
                     </div>
                 </div>
@@ -91,11 +354,11 @@
                 <div class="bg-white rounded-lg p-4 shadow-sm border border-gray-200 mt-4">
                     <h3 class="font-semibold text-gray-900 mb-3">Información Legal</h3>
                     <div class="space-y-2 text-sm">
-                        <a href="#privacy" class="text-accent-600 hover:text-accent-700 block">📋 Política de Privacidad</a>
-                        <a href="#terms" class="text-accent-600 hover:text-accent-700 block">📄 Términos de Servicio</a>
-                        <a href="#disclaimer" class="text-accent-600 hover:text-accent-700 block">⚖️ Aviso Legal</a>
-                        <a href="#refund" class="text-accent-600 hover:text-accent-700 block">💰 Política de Reembolso</a>
-                        <a href="#cookies" class="text-accent-600 hover:text-accent-700 block">🍪 Política de Cookies</a>
+                        <a href="privacy.html" class="text-accent-600 hover:text-accent-700 block">📋 Política de Privacidad</a>
+                        <a href="terms.html" class="text-accent-600 hover:text-accent-700 block">📄 Términos de Servicio</a>
+                        <a href="aviso.html" class="text-accent-600 hover:text-accent-700 block">⚖️ Aviso Legal</a>
+                        <a href="refund.html" class="text-accent-600 hover:text-accent-700 block">💰 Política de Reembolso</a>
+                        <a href="cookies.html" class="text-accent-600 hover:text-accent-700 block">🍪 Política de Cookies</a>
                         <p class="text-gray-600 text-xs mt-2">• Servicio privado de asistencia</p>
                         <p class="text-gray-600 text-xs">• No afiliados al SAT</p>
                     </div>
@@ -116,10 +379,11 @@
                                 </svg>
                             </div>
                             <h1 class="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold text-gray-900 mb-3 sm:mb-4 md:mb-6 px-2 sm:px-4 md:px-6 leading-tight">
-                                Asistencia profesional para trámites oficiales
+                                Estamos contigo para que cada paso sea sencillo y claro.
+
                             </h1>
                             <p class="text-base sm:text-lg md:text-xl lg:text-2xl xl:text-3xl text-gray-600 max-w-4xl mx-auto leading-relaxed px-2 sm:px-4 md:px-6 lg:px-8">
-                                Ayudamos mexicanos y extranjeros a resolver trámites de RFC, Citas SAT y más — rápido, понятно, sin estrés.
+                                Disfruta de atención cercana, orientación profesional y el respaldo de un equipo independiente que te acompaña en todo momento.
                             </p>
                         </div>
                          
@@ -163,8 +427,8 @@
             <section id="dashboard" class="p-4 sm:p-6 md:p-8 lg:p-10 xl:p-12">
                 <div class="max-w-7xl mx-auto">
                     <div class="mb-6 sm:mb-8 md:mb-10 lg:mb-12">
-                        <h2 class="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-3 sm:mb-4 md:mb-6">Panel de Control RFC</h2>
-                        <p class="text-gray-600 text-sm sm:text-base md:text-lg lg:text-xl">Gestiona tus trámites de RFC de manera eficiente</p>
+                        <h2 class="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-3 sm:mb-4 md:mb-6">Panel de Control</h2>
+                        <p class="text-gray-600 text-sm sm:text-base md:text-lg lg:text-xl">Gestiona tus trámites de manera eficiente</p>
                     </div>
 
                     <!-- Stats Grid -->
@@ -226,7 +490,7 @@
                         </div>
                     </div>
 
-                                         <!-- Quick Actions -->
+                    <!-- Quick Actions -->
                      <div class="bg-white rounded-lg shadow-sm border border-gray-200 p-4 sm:p-6 md:p-8 lg:p-10 mb-6 sm:mb-8 md:mb-10 lg:mb-12">
                          <h3 class="text-base sm:text-lg md:text-xl lg:text-2xl font-semibold text-gray-900 mb-3 sm:mb-4 md:mb-6">Acciones Rápidas</h3>
                          <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-4 md:gap-6">
@@ -236,8 +500,8 @@
                                          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6"></path>
                                      </svg>
                                      <div>
-                                         <p class="font-medium text-gray-900 text-sm sm:text-base md:text-lg">Obtención RFC</p>
-                                         <p class="text-xs sm:text-sm md:text-base text-gray-600">Nuevo RFC y consulta estatus</p>
+                                         <p class="font-medium text-gray-900 text-sm sm:text-base md:text-lg">Obtención</p>
+                                         <p class="text-xs sm:text-sm md:text-base text-gray-600">Nuevo y consulta estatus</p>
                                      </div>
                                  </div>
                              </button>
@@ -247,7 +511,7 @@
                                          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v10a2 2 0 002 2h8a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"></path>
                                      </svg>
                                      <div>
-                                         <p class="font-medium text-gray-900 text-sm sm:text-base md:text-lg">Actualización RFC</p>
+                                         <p class="font-medium text-gray-900 text-sm sm:text-base md:text-lg">Actualización</p>
                                          <p class="text-xs sm:text-sm md:text-base text-gray-600">Reactivación y actualización</p>
                                      </div>
                                  </div>
@@ -258,7 +522,7 @@
                                          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
                                      </svg>
                                      <div>
-                                         <p class="font-medium text-gray-900 text-sm sm:text-base md:text-lg">Citas SAT</p>
+                                         <p class="font-medium text-gray-900 text-sm sm:text-base md:text-lg">Citas</p>
                                          <p class="text-xs sm:text-sm md:text-base text-gray-600">Agendamiento presencial</p>
                                      </div>
                                  </div>
@@ -313,7 +577,7 @@
 
                                          <!-- Grupo 1: Obtención y Consulta -->
                      <div id="obtencion-consulta" class="mb-8 sm:mb-12 md:mb-16 lg:mb-20">
-                         <h3 class="text-lg sm:text-xl md:text-2xl lg:text-3xl font-semibold text-gray-900 mb-4 sm:mb-6 md:mb-8">Obtención y Consulta RFC</h3>
+                         <h3 class="text-lg sm:text-xl md:text-2xl lg:text-3xl font-semibold text-gray-900 mb-4 sm:mb-6 md:mb-8">Obtención y Consulta</h3>
                          <div class="grid grid-cols-1 lg:grid-cols-2 gap-4 sm:gap-6 md:gap-8">
                              <div class="bg-white rounded-lg shadow-sm border border-gray-200 p-4 sm:p-6 md:p-8 lg:p-10 hover:shadow-md transition-shadow">
                                  <div class="flex items-center justify-between mb-3 sm:mb-4 md:mb-6">
@@ -324,9 +588,9 @@
                                  <div class="bg-yellow-50 border border-yellow-200 rounded p-2 sm:p-3 md:p-4 mb-3 sm:mb-4 md:mb-6">
                                      <p class="text-yellow-800 text-xs sm:text-sm md:text-base font-medium">⚠️ No emitimos RFC oficial</p>
                                  </div>
-                                 <button class="w-full bg-accent-600 text-white py-2 sm:py-3 md:py-4 px-4 sm:px-6 md:px-8 rounded-lg hover:bg-accent-700 transition-colors text-sm sm:text-base md:text-lg">
+                                 <a href="services/obtener.html" class="block w-full bg-accent-600 text-white py-2 sm:py-3 md:py-4 px-4 sm:px-6 md:px-8 rounded-lg hover:bg-accent-700 transition-colors text-sm sm:text-base md:text-lg text-center">
                                      Seleccionar
-                                 </button>
+                                 </a>
                                  <p class="text-xs sm:text-sm md:text-base text-gray-500 mt-2 sm:mt-3 md:mt-4 text-center">Al seleccionar aceptas que somos un servicio de asistencia privada, no afiliado al SAT. Todos los trámites se realizan por los canales oficiales.</p>
                              </div>
                              
@@ -339,9 +603,9 @@
                                  <div class="bg-yellow-50 border border-yellow-200 rounded p-2 sm:p-3 md:p-4 mb-3 sm:mb-4 md:mb-6">
                                      <p class="text-yellow-800 text-xs sm:text-sm md:text-base font-medium">⚠️ Solo consulta informativa</p>
                                  </div>
-                                 <button class="w-full bg-accent-600 text-white py-2 sm:py-3 md:py-4 px-4 sm:px-6 md:px-8 rounded-lg hover:bg-accent-700 transition-colors text-sm sm:text-base md:text-lg">
+                                 <a href="services/estatus.html" class="block w-full bg-accent-600 text-white py-2 sm:py-3 md:py-4 px-4 sm:px-6 md:px-8 rounded-lg hover:bg-accent-700 transition-colors text-sm sm:text-base md:text-lg text-center">
                                      Seleccionar
-                                 </button>
+                                 </a>
                                  <p class="text-xs sm:text-sm md:text-base text-gray-500 mt-2 sm:mt-3 md:mt-4 text-center">Al seleccionar aceptas que somos un servicio de asistencia privada, no afiliado al SAT. Todos los trámites se realizan por los canales oficiales.</p>
                              </div>
                          </div>
@@ -356,13 +620,13 @@
                                      <h3 class="text-base sm:text-lg md:text-xl lg:text-2xl font-semibold text-gray-900">Actualización de datos del RFC o reactivación de registros inactivos</h3>
                                      <span class="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-accent-600">$149</span>
                                  </div>
-                                 <p class="text-gray-600 text-xs sm:text-sm md:text-base lg:text-lg mb-3 sm:mb-4 md:mb-6">Actualización de datos del RFC o reactivación de registros inactivos</p>
+                                 <p class="text-gray-600 text-xs sm:text-sm md:text-base lg:text-lg mb-3 sm:mb-4 md:mb-6">Te orientamos para que puedas revisar, corregir y reactivar tu RFC ante el SAT, de manera clara y sin errores.</p>
                                  <div class="bg-yellow-50 border border-yellow-200 rounded p-2 sm:p-3 md:p-4 mb-3 sm:mb-4 md:mb-6">
                                      <p class="text-yellow-800 text-xs sm:text-sm md:text-base font-medium">⚠️ Solo para RFC suspendidos</p>
                                  </div>
-                                 <button class="w-full bg-accent-600 text-white py-2 sm:py-3 md:py-4 px-4 sm:px-6 md:px-8 rounded-lg hover:bg-accent-700 transition-colors text-sm sm:text-base md:text-lg">
+                                 <a href="services/actualizar.html" class="block w-full bg-accent-600 text-white py-2 sm:py-3 md:py-4 px-4 sm:px-6 md:px-8 rounded-lg hover:bg-accent-700 transition-colors text-sm sm:text-base md:text-lg text-center">
                                      Seleccionar
-                                 </button>
+                                 </a>
                                  <p class="text-xs sm:text-sm md:text-base text-gray-500 mt-2 sm:mt-3 md:mt-4 text-center">Al seleccionar aceptas que somos un servicio de asistencia privada, no afiliado al SAT. Todos los trámites se realizan por los canales oficiales.</p>
                              </div>
                              
@@ -371,13 +635,13 @@
                                      <h3 class="text-base sm:text-lg md:text-xl lg:text-2xl font-semibold text-gray-900">Generación anticipada del RFC no oficial basado en tu CURP para trámites</h3>
                                      <span class="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-accent-600">$49</span>
                                  </div>
-                                 <p class="text-gray-600 text-xs sm:text-sm md:text-base lg:text-lg mb-3 sm:mb-4 md:mb-6">Generación anticipada del RFC no oficial basado en tu CURP para trámites</p>
+                                 <p class="text-gray-600 text-xs sm:text-sm md:text-base lg:text-lg mb-3 sm:mb-4 md:mb-6">Te proporcionamos un RFC preliminar a modo informativo, generado con tu CURP, útil sólo para trámites donde no se requiera el RFC oficial.</p>
                                  <div class="bg-red-50 border border-red-200 rounded p-2 sm:p-3 md:p-4 mb-3 sm:mb-4 md:mb-6">
                                      <p class="text-red-800 text-xs sm:text-sm md:text-base font-medium">🚨 No es RFC oficial</p>
                                  </div>
-                                 <button class="w-full bg-accent-600 text-white py-2 sm:py-3 md:py-4 px-4 sm:px-6 md:px-8 rounded-lg hover:bg-accent-700 transition-colors text-sm sm:text-base md:text-lg">
+                                 <a href="services/generar.html" class="block w-full bg-accent-600 text-white py-2 sm:py-3 md:py-4 px-4 sm:px-6 md:px-8 rounded-lg hover:bg-accent-700 transition-colors text-sm sm:text-base md:text-lg text-center">
                                      Seleccionar
-                                 </button>
+                                 </a>
                                  <p class="text-xs sm:text-sm md:text-base text-gray-500 mt-2 sm:mt-3 md:mt-4 text-center">Al seleccionar aceptas que somos un servicio de asistencia privada, no afiliado al SAT. Todos los trámites se realizan por los canales oficiales.</p>
                              </div>
                          </div>
@@ -392,13 +656,13 @@
                                      <h3 class="text-base sm:text-lg md:text-xl lg:text-2xl font-semibold text-gray-900">Agendamiento de cita SAT para inscripción presencial o firma electrónica</h3>
                                      <span class="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-accent-600">$149</span>
                                  </div>
-                                 <p class="text-gray-600 text-xs sm:text-sm md:text-base lg:text-lg mb-3 sm:mb-4 md:mb-6">Agendamiento de cita SAT para inscripción presencial o firma electrónica</p>
+                                 <p class="text-gray-600 text-xs sm:text-sm md:text-base lg:text-lg mb-3 sm:mb-4 md:mb-6">Te orientamos y asistimos en el proceso para que puedas obtener una cita en la fecha más conveniente.</p>
                                  <div class="bg-yellow-50 border border-yellow-200 rounded p-2 sm:p-3 md:p-4 mb-3 sm:mb-4 md:mb-6">
                                      <p class="text-yellow-800 text-xs sm:text-sm md:text-base font-medium">⚠️ Cliente debe presentarse</p>
                                  </div>
-                                 <button class="w-full bg-accent-600 text-white py-2 sm:py-3 md:py-4 px-4 sm:px-6 md:px-8 rounded-lg hover:bg-accent-700 transition-colors text-sm sm:text-base md:text-lg">
+                                 <a href="services/cita.html" class="block w-full bg-accent-600 text-white py-2 sm:py-3 md:py-4 px-4 sm:px-6 md:px-8 rounded-lg hover:bg-accent-700 transition-colors text-sm sm:text-base md:text-lg text-center">
                                      Seleccionar
-                                 </button>
+                                 </a>
                                  <p class="text-xs sm:text-sm md:text-base text-gray-500 mt-2 sm:mt-3 md:mt-4 text-center">Al seleccionar aceptas que somos un servicio de asistencia privada, no afiliado al SAT. Todos los trámites se realizan por los canales oficiales.</p>
                              </div>
                          </div>
@@ -499,7 +763,7 @@
                              
                              <div class="mt-4 sm:mt-6 md:mt-8 p-3 sm:p-4 md:p-6 bg-gray-50 rounded-lg border border-gray-200">
                                  <p class="text-sm sm:text-base md:text-lg lg:text-xl text-gray-600 mb-2 sm:mb-3 md:mb-4">¿Tienes problemas con algún servicio?</p>
-                                 <a href="#contact" class="text-accent-600 hover:text-accent-700 font-medium underline text-sm sm:text-base md:text-lg">Contáctanos aquí</a>
+                                 <a href="contact.html" class="text-accent-600 hover:text-accent-700 font-medium underline text-sm sm:text-base md:text-lg">Contáctanos aquí</a>
                              </div>
                          </div>
 
@@ -598,137 +862,331 @@
             </section>
 
                          <!-- Comparison Section -->
-             <section class="p-8">
-                 <div class="max-w-6xl mx-auto">
-                     <div class="mb-8 text-center">
-                         <h2 class="text-3xl font-bold text-gray-900 mb-4">¿Por qué elegirnos?</h2>
-                         <p class="text-gray-600">Compara y decide qué es mejor para ti</p>
+             <section class="p-4 sm:p-6 md:p-8 lg:p-10 xl:p-12">
+                 <div class="max-w-7xl mx-auto">
+                     <div class="mb-6 sm:mb-8 md:mb-10 lg:mb-12 text-center">
+                         <h2 class="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-3 sm:mb-4 md:mb-6">¿Por qué elegirnos?</h2>
+                         <p class="text-gray-600 text-sm sm:text-base md:text-lg lg:text-xl">Compara y decide qué es mejor para ti</p>
                      </div>
                      
-                     <div class="bg-white rounded-xl shadow-lg border border-gray-200 overflow-hidden">
-                         <div class="grid grid-cols-1 md:grid-cols-3 gap-0">
+                     <!-- Desktop Version (md and up) -->
+                     <div class="hidden md:block bg-white rounded-xl shadow-lg border border-gray-200 overflow-hidden">
+                         <div class="grid grid-cols-3 gap-0">
                              <!-- Header -->
-                             <div class="bg-gray-50 p-6 border-b border-gray-200">
-                                 <h3 class="text-lg font-semibold text-gray-900 mb-2">Criterio</h3>
-                                 <p class="text-sm text-gray-600">Lo que debes considerar</p>
+                             <div class="bg-gray-50 p-4 sm:p-6 border-b border-gray-200">
+                                 <h3 class="text-base sm:text-lg font-semibold text-gray-900 mb-2">Criterio</h3>
+                                 <p class="text-xs sm:text-sm text-gray-600">Lo que debes considerar</p>
                              </div>
-                             <div class="bg-accent-50 p-6 border-b border-accent-200">
+                             <div class="bg-accent-50 p-4 sm:p-6 border-b border-accent-200">
                                  <div class="flex items-center mb-2">
-                                     <div class="w-8 h-8 bg-accent-600 rounded-full flex items-center justify-center mr-3">
-                                         <svg class="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                     <div class="w-6 h-6 sm:w-8 sm:h-8 bg-accent-600 rounded-full flex items-center justify-center mr-2 sm:mr-3">
+                                         <svg class="w-3 h-3 sm:w-4 sm:h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
                                          </svg>
                                      </div>
-                                     <h3 class="text-lg font-semibold text-accent-900">Con nosotros</h3>
+                                     <h3 class="text-base sm:text-lg font-semibold text-accent-900">Con nosotros</h3>
                                  </div>
-                                 <p class="text-sm text-accent-700">Servicio profesional</p>
+                                 <p class="text-xs sm:text-sm text-accent-700">Servicio profesional</p>
                              </div>
-                             <div class="bg-red-50 p-6 border-b border-red-200">
+                             <div class="bg-red-50 p-4 sm:p-6 border-b border-red-200">
                                  <div class="flex items-center mb-2">
-                                     <div class="w-8 h-8 bg-red-600 rounded-full flex items-center justify-center mr-3">
-                                         <svg class="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                     <div class="w-6 h-6 sm:w-8 sm:h-8 bg-red-600 rounded-full flex items-center justify-center mr-2 sm:mr-3">
+                                         <svg class="w-3 h-3 sm:w-4 sm:h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
                                          </svg>
                                      </div>
-                                     <h3 class="text-lg font-semibold text-red-900">Por tu cuenta</h3>
+                                     <h3 class="text-base sm:text-lg font-semibold text-red-900">Por tu cuenta</h3>
                                  </div>
-                                 <p class="text-sm text-red-700">Proceso independiente</p>
+                                 <p class="text-xs sm:text-sm text-red-700">Proceso independiente</p>
                              </div>
                          </div>
                          
                          <!-- Rows -->
-                         <div class="grid grid-cols-1 md:grid-cols-3 gap-0">
-                             <div class="p-6 border-b border-gray-200 bg-gray-50">
+                         <div class="grid grid-cols-3 gap-0">
+                             <div class="p-4 sm:p-6 border-b border-gray-200 bg-gray-50">
+                                 <div class="flex items-center">
+                                     <svg class="w-4 h-4 sm:w-5 sm:h-5 text-gray-600 mr-2 sm:mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                                     </svg>
+                                     <span class="font-medium text-gray-900 text-sm sm:text-base">Solución</span>
+                                 </div>
+                             </div>
+                             <div class="p-4 sm:p-6 border-b border-accent-200 bg-green-50">
+                                 <span class="text-green-800 font-medium text-sm sm:text-base">2-3 días</span>
+                                 <p class="text-xs sm:text-sm text-green-600">Proceso optimizado</p>
+                             </div>
+                             <div class="p-4 sm:p-6 border-b border-red-200 bg-red-50">
+                                 <span class="text-red-800 font-medium text-sm sm:text-base">Hasta 14 días</span>
+                                 <p class="text-xs sm:text-sm text-red-600">Muchos trámites</p>
+                             </div>
+                         </div>
+                         
+                         <div class="grid grid-cols-3 gap-0">
+                             <div class="p-4 sm:p-6 border-b border-gray-200 bg-gray-50">
+                                 <div class="flex items-center">
+                                     <svg class="w-4 h-4 sm:w-5 sm:h-5 text-gray-600 mr-2 sm:mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-2.5L13.732 4c-.77-.833-1.964-.833-2.732 0L3.732 16.5c-.77.833.192 2.5 1.732 2.5z"></path>
+                                     </svg>
+                                     <span class="font-medium text-gray-900 text-sm sm:text-base">Errores</span>
+                                 </div>
+                             </div>
+                             <div class="p-4 sm:p-6 border-b border-accent-200 bg-green-50">
+                                 <span class="text-green-800 font-medium text-sm sm:text-base">Mínimos</span>
+                                 <p class="text-xs sm:text-sm text-green-600">Experiencia +5 años</p>
+                             </div>
+                             <div class="p-4 sm:p-6 border-b border-red-200 bg-red-50">
+                                 <span class="text-red-800 font-medium text-sm sm:text-base">Frecuentes</span>
+                                 <p class="text-xs sm:text-sm text-red-600">Sin experiencia</p>
+                             </div>
+                         </div>
+                         
+                         <div class="grid grid-cols-3 gap-0">
+                             <div class="p-4 sm:p-6 border-b border-gray-200 bg-gray-50">
+                                 <div class="flex items-center">
+                                     <svg class="w-4 h-4 sm:w-5 sm:h-5 text-gray-600 mr-2 sm:mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path>
+                                     </svg>
+                                     <span class="font-medium text-gray-900 text-sm sm:text-base">Soporte</span>
+                                 </div>
+                             </div>
+                             <div class="p-4 sm:p-6 border-b border-accent-200 bg-green-50">
+                                 <span class="text-green-800 font-medium text-sm sm:text-base">24/7, humano</span>
+                                 <p class="text-xs sm:text-sm text-green-600">WhatsApp + teléfono</p>
+                             </div>
+                             <div class="p-4 sm:p-6 border-b border-red-200 bg-red-50">
+                                 <span class="text-red-800 font-medium text-sm sm:text-base">Solo FAQ</span>
+                                 <p class="text-xs sm:text-sm text-red-600">Sin ayuda personal</p>
+                             </div>
+                         </div>
+                         
+                         <div class="grid grid-cols-3 gap-0">
+                             <div class="p-4 sm:p-6 border-b border-gray-200 bg-gray-50">
+                                 <div class="flex items-center">
+                                     <svg class="w-4 h-4 sm:w-5 sm:h-5 text-gray-600 mr-2 sm:mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                                     </svg>
+                                     <span class="font-medium text-gray-900 text-sm sm:text-base">Garantías</span>
+                                 </div>
+                             </div>
+                             <div class="p-4 sm:p-6 border-b border-accent-200 bg-green-50">
+                                 <span class="text-green-800 font-medium text-sm sm:text-base">Reembolso</span>
+                                 <p class="text-xs sm:text-sm text-green-600">Si no se logra</p>
+                             </div>
+                             <div class="p-4 sm:p-6 border-b border-red-200 bg-red-50">
+                                 <span class="text-red-800 font-medium text-sm sm:text-base">Ninguna</span>
+                                 <p class="text-xs sm:text-sm text-red-600">Sin protección</p>
+                             </div>
+                         </div>
+                         
+                         <div class="grid grid-cols-3 gap-0">
+                             <div class="p-4 sm:p-6 bg-gray-50">
+                                 <div class="flex items-center">
+                                     <svg class="w-4 h-4 sm:w-5 sm:h-5 text-gray-600 mr-2 sm:mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"></path>
+                                     </svg>
+                                     <span class="font-medium text-gray-900 text-sm sm:text-base">Proceso</span>
+                                 </div>
+                             </div>
+                             <div class="p-4 sm:p-6 bg-green-50">
+                                 <span class="text-green-800 font-medium text-sm sm:text-base">Llave en mano</span>
+                                 <p class="text-xs sm:text-sm text-green-600">Sin estrés</p>
+                             </div>
+                             <div class="p-4 sm:p-6 bg-red-50">
+                                 <span class="text-red-800 font-medium text-sm sm:text-base">Todo tú</span>
+                                 <p class="text-xs sm:text-sm text-red-600">Muchos pasos</p>
+                             </div>
+                         </div>
+                     </div>
+                     
+                     <!-- Mobile Version (below md) -->
+                     <div class="md:hidden space-y-4 sm:space-y-6">
+                         <!-- Criterio 1: Solución -->
+                         <div class="bg-white rounded-lg shadow-sm border border-gray-200 overflow-hidden">
+                             <div class="bg-gray-50 p-4 sm:p-6 border-b border-gray-200">
                                  <div class="flex items-center">
                                      <svg class="w-5 h-5 text-gray-600 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
                                      </svg>
-                                     <span class="font-medium text-gray-900">Solución</span>
+                                     <span class="font-medium text-gray-900 text-base sm:text-lg">Solución</span>
                                  </div>
                              </div>
-                             <div class="p-6 border-b border-accent-200 bg-green-50">
-                                 <span class="text-green-800 font-medium">2-3 días</span>
-                                 <p class="text-sm text-green-600">Proceso optimizado</p>
-                             </div>
-                             <div class="p-6 border-b border-red-200 bg-red-50">
-                                 <span class="text-red-800 font-medium">Hasta 14 días</span>
-                                 <p class="text-sm text-red-600">Muchos trámites</p>
+                             <div class="grid grid-cols-2 gap-0">
+                                 <div class="p-4 sm:p-6 bg-green-50 border-r border-green-200">
+                                     <div class="flex items-center mb-2">
+                                         <div class="w-6 h-6 bg-accent-600 rounded-full flex items-center justify-center mr-2">
+                                             <svg class="w-3 h-3 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                                             </svg>
+                                         </div>
+                                         <span class="text-green-800 font-medium text-sm">Con nosotros</span>
+                                     </div>
+                                     <p class="text-green-800 font-medium text-base sm:text-lg">2-3 días</p>
+                                     <p class="text-sm text-green-600">Proceso optimizado</p>
+                                 </div>
+                                 <div class="p-4 sm:p-6 bg-red-50">
+                                     <div class="flex items-center mb-2">
+                                         <div class="w-6 h-6 bg-red-600 rounded-full flex items-center justify-center mr-2">
+                                             <svg class="w-3 h-3 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                                             </svg>
+                                         </div>
+                                         <span class="text-red-800 font-medium text-sm">Por tu cuenta</span>
+                                     </div>
+                                     <p class="text-red-800 font-medium text-base sm:text-lg">Hasta 14 días</p>
+                                     <p class="text-sm text-red-600">Muchos trámites</p>
+                                 </div>
                              </div>
                          </div>
                          
-                         <div class="grid grid-cols-1 md:grid-cols-3 gap-0">
-                             <div class="p-6 border-b border-gray-200 bg-gray-50">
+                         <!-- Criterio 2: Errores -->
+                         <div class="bg-white rounded-lg shadow-sm border border-gray-200 overflow-hidden">
+                             <div class="bg-gray-50 p-4 sm:p-6 border-b border-gray-200">
                                  <div class="flex items-center">
                                      <svg class="w-5 h-5 text-gray-600 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-2.5L13.732 4c-.77-.833-1.964-.833-2.732 0L3.732 16.5c-.77.833.192 2.5 1.732 2.5z"></path>
                                      </svg>
-                                     <span class="font-medium text-gray-900">Errores</span>
+                                     <span class="font-medium text-gray-900 text-base sm:text-lg">Errores</span>
                                  </div>
                              </div>
-                             <div class="p-6 border-b border-accent-200 bg-green-50">
-                                 <span class="text-green-800 font-medium">Mínimos</span>
-                                 <p class="text-sm text-green-600">Experiencia +5 años</p>
-                             </div>
-                             <div class="p-6 border-b border-red-200 bg-red-50">
-                                 <span class="text-red-800 font-medium">Frecuentes</span>
-                                 <p class="text-sm text-red-600">Sin experiencia</p>
+                             <div class="grid grid-cols-2 gap-0">
+                                 <div class="p-4 sm:p-6 bg-green-50 border-r border-green-200">
+                                     <div class="flex items-center mb-2">
+                                         <div class="w-6 h-6 bg-accent-600 rounded-full flex items-center justify-center mr-2">
+                                             <svg class="w-3 h-3 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                                             </svg>
+                                         </div>
+                                         <span class="text-green-800 font-medium text-sm">Con nosotros</span>
+                                     </div>
+                                     <p class="text-green-800 font-medium text-base sm:text-lg">Mínimos</p>
+                                     <p class="text-sm text-green-600">Experiencia +5 años</p>
+                                 </div>
+                                 <div class="p-4 sm:p-6 bg-red-50">
+                                     <div class="flex items-center mb-2">
+                                         <div class="w-6 h-6 bg-red-600 rounded-full flex items-center justify-center mr-2">
+                                             <svg class="w-3 h-3 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                                             </svg>
+                                         </div>
+                                         <span class="text-red-800 font-medium text-sm">Por tu cuenta</span>
+                                     </div>
+                                     <p class="text-red-800 font-medium text-base sm:text-lg">Frecuentes</p>
+                                     <p class="text-sm text-red-600">Sin experiencia</p>
+                                 </div>
                              </div>
                          </div>
                          
-                         <div class="grid grid-cols-1 md:grid-cols-3 gap-0">
-                             <div class="p-6 border-b border-gray-200 bg-gray-50">
+                         <!-- Criterio 3: Soporte -->
+                         <div class="bg-white rounded-lg shadow-sm border border-gray-200 overflow-hidden">
+                             <div class="bg-gray-50 p-4 sm:p-6 border-b border-gray-200">
                                  <div class="flex items-center">
                                      <svg class="w-5 h-5 text-gray-600 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path>
                                      </svg>
-                                     <span class="font-medium text-gray-900">Soporte</span>
+                                     <span class="font-medium text-gray-900 text-base sm:text-lg">Soporte</span>
                                  </div>
                              </div>
-                             <div class="p-6 border-b border-accent-200 bg-green-50">
-                                 <span class="text-green-800 font-medium">24/7, humano</span>
-                                 <p class="text-sm text-green-600">WhatsApp + teléfono</p>
-                             </div>
-                             <div class="p-6 border-b border-red-200 bg-red-50">
-                                 <span class="text-red-800 font-medium">Solo FAQ</span>
-                                 <p class="text-sm text-red-600">Sin ayuda personal</p>
+                             <div class="grid grid-cols-2 gap-0">
+                                 <div class="p-4 sm:p-6 bg-green-50 border-r border-green-200">
+                                     <div class="flex items-center mb-2">
+                                         <div class="w-6 h-6 bg-accent-600 rounded-full flex items-center justify-center mr-2">
+                                             <svg class="w-3 h-3 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                                             </svg>
+                                         </div>
+                                         <span class="text-green-800 font-medium text-sm">Con nosotros</span>
+                                     </div>
+                                     <p class="text-green-800 font-medium text-base sm:text-lg">24/7, humano</p>
+                                     <p class="text-sm text-green-600">WhatsApp + teléfono</p>
+                                 </div>
+                                 <div class="p-4 sm:p-6 bg-red-50">
+                                     <div class="flex items-center mb-2">
+                                         <div class="w-6 h-6 bg-red-600 rounded-full flex items-center justify-center mr-2">
+                                             <svg class="w-3 h-3 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                                             </svg>
+                                         </div>
+                                         <span class="text-red-800 font-medium text-sm">Por tu cuenta</span>
+                                     </div>
+                                     <p class="text-red-800 font-medium text-base sm:text-lg">Solo FAQ</p>
+                                     <p class="text-sm text-red-600">Sin ayuda personal</p>
+                                 </div>
                              </div>
                          </div>
                          
-                         <div class="grid grid-cols-1 md:grid-cols-3 gap-0">
-                             <div class="p-6 border-b border-gray-200 bg-gray-50">
+                         <!-- Criterio 4: Garantías -->
+                         <div class="bg-white rounded-lg shadow-sm border border-gray-200 overflow-hidden">
+                             <div class="bg-gray-50 p-4 sm:p-6 border-b border-gray-200">
                                  <div class="flex items-center">
                                      <svg class="w-5 h-5 text-gray-600 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
                                      </svg>
-                                     <span class="font-medium text-gray-900">Garantías</span>
+                                     <span class="font-medium text-gray-900 text-base sm:text-lg">Garantías</span>
                                  </div>
                              </div>
-                             <div class="p-6 border-b border-accent-200 bg-green-50">
-                                 <span class="text-green-800 font-medium">Reembolso</span>
-                                 <p class="text-sm text-green-600">Si no se logra</p>
-                             </div>
-                             <div class="p-6 border-b border-red-200 bg-red-50">
-                                 <span class="text-red-800 font-medium">Ninguna</span>
-                                 <p class="text-sm text-red-600">Sin protección</p>
+                             <div class="grid grid-cols-2 gap-0">
+                                 <div class="p-4 sm:p-6 bg-green-50 border-r border-green-200">
+                                     <div class="flex items-center mb-2">
+                                         <div class="w-6 h-6 bg-accent-600 rounded-full flex items-center justify-center mr-2">
+                                             <svg class="w-3 h-3 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                                             </svg>
+                                         </div>
+                                         <span class="text-green-800 font-medium text-sm">Con nosotros</span>
+                                     </div>
+                                     <p class="text-green-800 font-medium text-base sm:text-lg">Reembolso</p>
+                                     <p class="text-sm text-green-600">Si no se logra</p>
+                                 </div>
+                                 <div class="p-4 sm:p-6 bg-red-50">
+                                     <div class="flex items-center mb-2">
+                                         <div class="w-6 h-6 bg-red-600 rounded-full flex items-center justify-center mr-2">
+                                             <svg class="w-3 h-3 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                                             </svg>
+                                         </div>
+                                         <span class="text-red-800 font-medium text-sm">Por tu cuenta</span>
+                                     </div>
+                                     <p class="text-red-800 font-medium text-base sm:text-lg">Ninguna</p>
+                                     <p class="text-sm text-red-600">Sin protección</p>
+                                 </div>
                              </div>
                          </div>
                          
-                         <div class="grid grid-cols-1 md:grid-cols-3 gap-0">
-                             <div class="p-6 bg-gray-50">
+                         <!-- Criterio 5: Proceso -->
+                         <div class="bg-white rounded-lg shadow-sm border border-gray-200 overflow-hidden">
+                             <div class="bg-gray-50 p-4 sm:p-6 border-b border-gray-200">
                                  <div class="flex items-center">
                                      <svg class="w-5 h-5 text-gray-600 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"></path>
                                      </svg>
-                                     <span class="font-medium text-gray-900">Proceso</span>
+                                     <span class="font-medium text-gray-900 text-base sm:text-lg">Proceso</span>
                                  </div>
                              </div>
-                             <div class="p-6 bg-green-50">
-                                 <span class="text-green-800 font-medium">Llave en mano</span>
-                                 <p class="text-sm text-green-600">Sin estrés</p>
-                             </div>
-                             <div class="p-6 bg-red-50">
-                                 <span class="text-red-800 font-medium">Todo tú</span>
-                                 <p class="text-sm text-red-600">Muchos pasos</p>
+                             <div class="grid grid-cols-2 gap-0">
+                                 <div class="p-4 sm:p-6 bg-green-50 border-r border-green-200">
+                                     <div class="flex items-center mb-2">
+                                         <div class="w-6 h-6 bg-accent-600 rounded-full flex items-center justify-center mr-2">
+                                             <svg class="w-3 h-3 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                                             </svg>
+                                         </div>
+                                         <span class="text-green-800 font-medium text-sm">Con nosotros</span>
+                                     </div>
+                                     <p class="text-green-800 font-medium text-base sm:text-lg">Llave en mano</p>
+                                     <p class="text-sm text-green-600">Sin estrés</p>
+                                 </div>
+                                 <div class="p-4 sm:p-6 bg-red-50">
+                                     <div class="flex items-center mb-2">
+                                         <div class="w-6 h-6 bg-red-600 rounded-full flex items-center justify-center mr-2">
+                                             <svg class="w-3 h-3 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                                             </svg>
+                                         </div>
+                                         <span class="text-red-800 font-medium text-sm">Por tu cuenta</span>
+                                     </div>
+                                     <p class="text-red-800 font-medium text-base sm:text-lg">Todo tú</p>
+                                     <p class="text-sm text-red-600">Muchos pasos</p>
+                                 </div>
                              </div>
                          </div>
                      </div>
@@ -941,7 +1399,7 @@
                                  </div>
                                  <div class="bg-gray-100 text-gray-900 rounded-lg p-3 max-w-xs">
                                      <p class="text-sm">¡Perfecto! Te ayudo con eso. Primero necesito que llenes un formulario corto con tus datos básicos.</p>
-                                     <p class="text-xs text-gray-500 mt-1">Movilex</p>
+                                     <p class="text-xs text-gray-500 mt-1">TRAMICO</p>
                                  </div>
                              </div>
                              
@@ -966,7 +1424,7 @@
                                  </div>
                                  <div class="bg-gray-100 text-gray-900 rounded-lg p-3 max-w-xs">
                                      <p class="text-sm">Excelente. Ahora necesito que me envíes una foto de tu INE y CURP para verificar la información.</p>
-                                     <p class="text-xs text-gray-500 mt-1">Movilex</p>
+                                     <p class="text-xs text-gray-500 mt-1">TRAMICO</p>
                                  </div>
                              </div>
                              
@@ -991,7 +1449,7 @@
                                  </div>
                                  <div class="bg-gray-100 text-gray-900 rounded-lg p-3 max-w-xs">
                                      <p class="text-sm">Perfecto, voy a revisar todo. En 24-48 horas te envío las instrucciones para continuar con el SAT.</p>
-                                     <p class="text-xs text-gray-500 mt-1">Movilex</p>
+                                     <p class="text-xs text-gray-500 mt-1">TRAMICO</p>
                                  </div>
                              </div>
                              
@@ -1016,7 +1474,7 @@
                                  </div>
                                  <div class="bg-gray-100 text-gray-900 rounded-lg p-3 max-w-xs">
                                      <p class="text-sm">¡Sí! Tu RFC está listo. Te envío el número y las instrucciones para descargar tu constancia oficial del SAT.</p>
-                                     <p class="text-xs text-gray-500 mt-1">Movilex</p>
+                                     <p class="text-xs text-gray-500 mt-1">TRAMICO</p>
                                  </div>
                              </div>
                              
@@ -1041,7 +1499,7 @@
                                  </div>
                                  <div class="bg-gray-100 text-gray-900 rounded-lg p-3 max-w-xs">
                                      <p class="text-sm">¡De nada! Recuerda que somos un servicio de asistencia privado. Cualquier duda, aquí estamos. 😊</p>
-                                     <p class="text-xs text-gray-500 mt-1">Movilex</p>
+                                     <p class="text-xs text-gray-500 mt-1">TRAMICO</p>
                                  </div>
                              </div>
                          </div>
@@ -1055,13 +1513,16 @@
         </div>
     </div>
 
+    <!-- Spacer to prevent sidebar overlap with footer on wide screens -->
+    <div class="lg:mb-20"></div>
+
     <!-- Professional Footer -->
     <footer class="bg-gray-900 text-white">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
                 <!-- Company Info -->
                 <div class="col-span-1 md:col-span-2">
-                    <h3 class="text-xl font-bold mb-4">Movilex</h3>
+                    <h3 class="text-xl font-bold mb-4">TRAMICO</h3>
                     <p class="text-gray-300 mb-4">Servicios profesionales de asistencia para trámites oficiales en México. Somos un servicio privado de consultoría y asistencia especializada en procedimientos administrativos.</p>
                 </div>
 
@@ -1069,11 +1530,11 @@
                 <div>
                     <h4 class="text-lg font-semibold mb-4">Información Legal</h4>
                     <ul class="space-y-2 text-gray-300">
-                        <li><a href="#privacy" class="hover:text-white transition-colors">Política de Privacidad</a></li>
-                        <li><a href="#terms" class="hover:text-white transition-colors">Términos de Servicio</a></li>
-                        <li><a href="#disclaimer" class="hover:text-white transition-colors">Aviso Legal</a></li>
-                        <li><a href="#refund" class="hover:text-white transition-colors">Política de Reembolso</a></li>
-                        <li><a href="#cookies" class="hover:text-white transition-colors">Política de Cookies</a></li>
+                        <li><a href="privacy.html" class="hover:text-white transition-colors">Política de Privacidad</a></li>
+                        <li><a href="terms.html" class="hover:text-white transition-colors">Términos de Servicio</a></li>
+                        <li><a href="aviso.html" class="hover:text-white transition-colors">Aviso Legal</a></li>
+                        <li><a href="refund.html" class="hover:text-white transition-colors">Política de Reembolso</a></li>
+                        <li><a href="cookies.html" class="hover:text-white transition-colors">Política de Cookies</a></li>
                     </ul>
                 </div>
             </div>
@@ -1085,7 +1546,7 @@
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-6 text-sm text-gray-300">
                         <div>
                             <h5 class="font-semibold text-white mb-2">Servicio Privado</h5>
-                            <p class="mb-3">Movilex es un servicio privado de asistencia y consultoría. No somos una institución gubernamental ni estamos afiliados al SAT o cualquier entidad oficial.</p>
+                            <p class="mb-3">TRAMICO es un servicio privado de asistencia y consultoría. No somos una institución gubernamental ni estamos afiliados al SAT o cualquier entidad oficial.</p>
                             
                             <h5 class="font-semibold text-white mb-2">Limitación de Responsabilidad</h5>
                             <p class="mb-3">Nuestros servicios se basan en la información proporcionada por el cliente. No garantizamos resultados específicos ni tiempos de procesamiento.</p>
@@ -1105,7 +1566,7 @@
             <div class="border-t border-gray-800 pt-8">
                 <div class="flex flex-col md:flex-row justify-between items-center">
                     <div class="text-gray-400 text-sm mb-4 md:mb-0">
-                        <p>&copy; 2024 Movilex. Todos los derechos reservados.</p>
+                        <p>&copy; 2024 TRAMICO. Todos los derechos reservados.</p>
                         <p class="mt-1">Servicio privado de asistencia. No afiliado al SAT ni a instituciones gubernamentales.</p>
                         <p class="mt-1">Registro de marca en trámite. RFC: En proceso de obtención.</p>
                     </div>
@@ -1118,143 +1579,547 @@
         </div>
     </footer>
 
-         <script>
-         // Mobile menu functionality
-         document.addEventListener('DOMContentLoaded', function() {
-             const mobileMenuBtn = document.getElementById('mobile-menu-btn');
-             const sidebar = document.getElementById('sidebar');
-             const sidebarContent = document.getElementById('sidebar-content');
-             const closeSidebarBtn = document.getElementById('close-sidebar');
-             const sidebarOverlay = document.getElementById('sidebar-overlay');
-             
-             // Function to disable scroll
-             function disableScroll() {
-                 document.body.style.overflow = 'hidden';
-                 document.documentElement.style.overflow = 'hidden';
-             }
-             
-             // Function to enable scroll
-             function enableScroll() {
-                 document.body.style.overflow = '';
-                 document.documentElement.style.overflow = '';
-             }
-             
-                                 // Open mobile menu
-                    mobileMenuBtn.addEventListener('click', function() {
-                        // Get current scroll position
-                        const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-                        
-                        // Set sidebar position to current scroll position
-                        sidebar.style.top = scrollTop + 'px';
-                        
-                        sidebar.classList.remove('-translate-x-full');
-                        sidebar.classList.add('translate-x-0');
-                        sidebarOverlay.classList.remove('opacity-0', 'pointer-events-none');
-                        sidebarOverlay.classList.add('opacity-100');
-                        
-                        // Disable page scroll when menu is open
-                        disableScroll();
-                    });
-             
-             // Close mobile menu
-             function closeMobileMenu() {
-                 sidebar.classList.remove('translate-x-0');
-                 sidebar.classList.add('-translate-x-full');
-                 sidebarOverlay.classList.remove('opacity-100');
-                 sidebarOverlay.classList.add('opacity-0', 'pointer-events-none');
-                 
-                 // Reset sidebar position
-                 sidebar.style.top = '';
-                 
-                 // Enable page scroll when menu is closed
-                 enableScroll();
-             }
-             
-             closeSidebarBtn.addEventListener('click', closeMobileMenu);
-             sidebarOverlay.addEventListener('click', closeMobileMenu);
-             
-             // Close on escape key
-             document.addEventListener('keydown', function(e) {
-                 if (e.key === 'Escape') {
-                     closeMobileMenu();
-                 }
-             });
-             
-             // Close on navigation link click (mobile only)
-             const navLinks = sidebar.querySelectorAll('a');
-             navLinks.forEach(link => {
-                 link.addEventListener('click', function() {
-                     if (window.innerWidth < 1024) { // lg breakpoint
-                         closeMobileMenu();
-                     }
-                 });
-             });
-             
-             // Handle window resize
-             window.addEventListener('resize', function() {
-                 if (window.innerWidth >= 1024) {
-                     sidebar.classList.remove('-translate-x-full', 'translate-x-0');
-                     sidebar.classList.add('lg:translate-x-0');
-                     sidebarOverlay.classList.remove('opacity-100');
-                     sidebarOverlay.classList.add('opacity-0', 'pointer-events-none');
-                 } else {
-                     sidebar.classList.remove('lg:translate-x-0');
-                     sidebar.classList.add('-translate-x-full');
-                     sidebarOverlay.classList.remove('opacity-100');
-                     sidebarOverlay.classList.add('opacity-0', 'pointer-events-none');
-                 }
-             });
-         });
+    <!-- Cookie Banner - Optimized and Accessible -->
+    <div id="cookie-banner" 
+         class="fixed bottom-0 left-0 right-0 bg-white border-t border-gray-200 shadow-lg z-50 transform translate-y-full transition-transform duration-300"
+         role="dialog" 
+         aria-labelledby="cookie-title" 
+         aria-describedby="cookie-description"
+         aria-modal="true">
+        <div class="max-w-7xl mx-auto px-4 py-6">
+            <div class="flex flex-col lg:flex-row items-start lg:items-center justify-between gap-6">
+                <div class="flex items-start gap-4 flex-1 max-w-4xl">
+                    <div class="flex-shrink-0 mt-1" aria-hidden="true">
+                        <svg class="w-6 h-6 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" role="img" aria-label="Icono de privacidad">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"></path>
+                        </svg>
+                    </div>
+                    <div class="flex-1">
+                        <h3 id="cookie-title" class="text-lg font-semibold text-gray-900 mb-3">Tu privacidad es importante para nosotros</h3>
+                        <div id="cookie-description" class="space-y-3">
+                            <p class="text-sm text-gray-700 leading-relaxed">
+                                En TRAMICO utilizamos tecnologías de almacenamiento local para garantizar el correcto funcionamiento de nuestro sitio web y mejorar tu experiencia de navegación. Estas tecnologías incluyen cookies técnicas esenciales para la operación del sitio, así como cookies analíticas que nos ayudan a comprender cómo interactúas con nuestra plataforma para optimizar su rendimiento.
+                            </p>
+                            <p class="text-sm text-gray-700 leading-relaxed">
+                                Las cookies técnicas son necesarias para el funcionamiento básico del sitio y se instalan automáticamente. Las cookies analíticas y de preferencias son opcionales y solo se activan con tu consentimiento explícito. Puedes gestionar tus preferencias en cualquier momento a través de nuestra Política de Cookies o configurando tu navegador.
+                            </p>
+                            <p class="text-sm text-gray-700 leading-relaxed">
+                                TRAMICO es responsable del procesamiento de estos datos según lo establecido en nuestra Política de Privacidad. Tu consentimiento no es obligatorio para navegar por nuestro sitio, excepto para las cookies técnicas esenciales. Puedes cambiar o revocar tu consentimiento en cualquier momento.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="button-group flex flex-col sm:flex-row gap-3 flex-shrink-0 min-w-fit" role="group" aria-label="Opciones de cookies">
+                    <button id="accept-cookies" 
+                            class="bg-blue-600 text-white text-sm font-medium rounded-lg hover:bg-blue-700 transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 whitespace-nowrap"
+                            aria-describedby="accept-description">
+                        Aceptar todas las cookies
+                        <span id="accept-description" class="sr-only">Acepta todas las cookies incluyendo analíticas y de preferencias</span>
+                    </button>
+                    <button id="configure-cookies" 
+                            class="bg-gray-100 text-gray-700 text-sm font-medium rounded-lg hover:bg-gray-200 transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-gray-500 focus:ring-offset-2 whitespace-nowrap"
+                            aria-describedby="configure-description">
+                        Configurar preferencias
+                        <span id="configure-description" class="sr-only">Abre opciones para configurar tipos específicos de cookies</span>
+                    </button>
+                    <a href="cookies.html" 
+                       class="text-sm text-blue-600 hover:text-blue-700 underline text-center sm:text-left focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 rounded whitespace-nowrap"
+                       aria-describedby="policy-description">
+                        Política de cookies
+                        <span id="policy-description" class="sr-only">Enlace a la política completa de cookies</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
 
-         // Smooth scrolling for navigation
-         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-             anchor.addEventListener('click', function (e) {
-                 e.preventDefault();
-                 const target = document.querySelector(this.getAttribute('href'));
-                 if (target) {
-                     target.scrollIntoView({
-                         behavior: 'smooth',
-                         block: 'start'
-                     });
-                 }
-             });
-         });
+    <!-- Cookie Preferences Modal -->
+    <div id="cookie-modal" class="fixed inset-0 bg-black bg-opacity-50 z-50 hidden items-center justify-center p-4" role="dialog" aria-labelledby="modal-title" aria-describedby="modal-description">
+        <div class="modal-content bg-white rounded-xl max-w-md w-full max-h-90vh overflow-y-auto shadow-2xl">
+            <div class="p-6">
+                <div class="flex items-center justify-between mb-6">
+                    <h2 id="modal-title" class="text-xl font-semibold text-gray-900">Configurar Cookies</h2>
+                    <button id="close-modal" class="text-gray-400 hover:text-gray-600 transition-colors" aria-label="Cerrar modal">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                        </svg>
+                    </button>
+                </div>
+                
+                <div id="modal-description" class="space-y-4 mb-6">
+                    <p class="text-sm text-gray-700 leading-relaxed">
+                        Selecciona qué tipos de cookies deseas permitir en este sitio web:
+                    </p>
+                    
+                    <div class="space-y-4">
+                        <!-- Essential Cookies (Always enabled) -->
+                        <div class="border border-gray-200 rounded-lg p-4 bg-gray-50">
+                            <div class="flex items-center justify-between mb-2">
+                                <label class="text-sm font-medium text-gray-900">Cookies Esenciales</label>
+                                <span class="text-xs bg-green-100 text-green-800 px-2 py-1 rounded-full">Siempre activas</span>
+                            </div>
+                            <p class="text-xs text-gray-600">
+                                Necesarias para el funcionamiento básico del sitio web. No se pueden desactivar.
+                            </p>
+                        </div>
+                        
+                        <!-- Analytics Cookies -->
+                        <div class="border border-gray-200 rounded-lg p-4">
+                            <div class="flex items-center justify-between mb-2">
+                                <label for="analytics-toggle" class="text-sm font-medium text-gray-900">Cookies Analíticas</label>
+                                <div class="relative">
+                                    <input type="checkbox" id="analytics-toggle" class="sr-only" checked>
+                                    <div class="w-10 h-6 bg-gray-200 rounded-full transition-colors duration-200" id="analytics-switch">
+                                        <div class="w-4 h-4 bg-white rounded-full shadow transform transition-transform duration-200" id="analytics-thumb" style="transform: translateX(24px);"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <p class="text-xs text-gray-600">
+                                Nos ayudan a entender cómo utilizas el sitio para mejorar su rendimiento.
+                            </p>
+                        </div>
+                        
+                        <!-- Preference Cookies -->
+                        <div class="border border-gray-200 rounded-lg p-4">
+                            <div class="flex items-center justify-between mb-2">
+                                <label for="preference-toggle" class="text-sm font-medium text-gray-900">Cookies de Preferencias</label>
+                                <div class="relative">
+                                    <input type="checkbox" id="preference-toggle" class="sr-only" checked>
+                                    <div class="w-10 h-6 bg-gray-200 rounded-full transition-colors duration-200" id="preference-switch">
+                                        <div class="w-4 h-4 bg-white rounded-full shadow transform transition-transform duration-200" id="preference-thumb" style="transform: translateX(24px);"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <p class="text-xs text-gray-600">
+                                Permiten recordar tus preferencias y configuraciones personalizadas.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="flex flex-col sm:flex-row gap-3">
+                    <button id="save-preferences" 
+                            class="flex-1 px-4 py-2 bg-blue-600 text-white text-sm font-medium rounded-lg hover:bg-blue-700 transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2">
+                        Guardar Preferencias
+                    </button>
+                    <button id="reject-all" 
+                            class="flex-1 px-4 py-2 bg-gray-100 text-gray-700 text-sm font-medium rounded-lg hover:bg-gray-200 transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-gray-500 focus:ring-offset-2">
+                        Rechazar Todas
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
 
-         // Function to scroll to service sections
-         function scrollToSection(sectionId) {
-             const section = document.getElementById(sectionId);
-             if (section) {
-                 // First scroll to services section
-                 const servicesSection = document.getElementById('services');
-                 if (servicesSection) {
-                     servicesSection.scrollIntoView({
-                         behavior: 'smooth',
-                         block: 'start'
-                     });
-                     
-                     // Then scroll to specific section after a short delay
-                     setTimeout(() => {
-                         section.scrollIntoView({
-                             behavior: 'smooth',
-                             block: 'start'
-                         });
-                     }, 500);
-                 }
-             }
-         }
- 
-         // Add hover effects
-         document.addEventListener('DOMContentLoaded', function() {
-             const cards = document.querySelectorAll('.bg-white');
-             cards.forEach(card => {
-                 card.addEventListener('mouseenter', function() {
-                     this.style.transform = 'translateY(-2px)';
-                 });
-                 card.addEventListener('mouseleave', function() {
-                     this.style.transform = 'translateY(0)';
-                 });
-             });
-         });
-     </script>
+    <script>
+        // All JavaScript functionality in one block
+        document.addEventListener('DOMContentLoaded', function() {
+            // Mobile menu functionality
+            const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+            const sidebar = document.getElementById('sidebar');
+            const sidebarContent = document.getElementById('sidebar-content');
+            const closeSidebarBtn = document.getElementById('close-sidebar');
+            const sidebarOverlay = document.getElementById('sidebar-overlay');
+            
+            function disableScroll() {
+                document.body.style.overflow = 'hidden';
+                document.documentElement.style.overflow = 'hidden';
+            }
+            
+            function enableScroll() {
+                document.body.style.overflow = '';
+                document.documentElement.style.overflow = '';
+            }
+            
+            mobileMenuBtn.addEventListener('click', function() {
+                const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+                sidebar.style.top = '0';
+                sidebar.classList.remove('-translate-x-full');
+                sidebar.classList.add('translate-x-0');
+                sidebarOverlay.classList.remove('opacity-0', 'pointer-events-none');
+                sidebarOverlay.classList.add('opacity-100');
+                mobileMenuBtn.style.display = 'none';
+                disableScroll();
+                
+                // Force mobile menu to be visible and properly positioned
+                sidebar.style.transform = 'translateX(0)';
+                sidebar.style.zIndex = '50';
+                
+                // Ensure the sidebar is positioned correctly at current scroll position
+                requestAnimationFrame(() => {
+                    sidebar.style.top = '0';
+                });
+            });
+            
+            function closeMobileMenu() {
+                sidebar.classList.remove('translate-x-0');
+                sidebar.classList.add('-translate-x-full');
+                sidebarOverlay.classList.remove('opacity-100');
+                sidebarOverlay.classList.add('opacity-0', 'pointer-events-none');
+                sidebar.style.top = '';
+                sidebar.style.transform = '';
+                sidebar.style.zIndex = '';
+                mobileMenuBtn.style.display = '';
+                enableScroll();
+            }
+            
+            closeSidebarBtn.addEventListener('click', closeMobileMenu);
+            sidebarOverlay.addEventListener('click', closeMobileMenu);
+            
+            document.addEventListener('keydown', function(e) {
+                if (e.key === 'Escape') {
+                    closeMobileMenu();
+                }
+            });
+            
+            const navLinks = sidebar.querySelectorAll('a');
+            navLinks.forEach(link => {
+                link.addEventListener('click', function() {
+                    if (window.innerWidth < 1024) {
+                        closeMobileMenu();
+                    }
+                });
+            });
+            
+            window.addEventListener('resize', function() {
+                if (window.innerWidth >= 1024) {
+                    sidebar.classList.remove('-translate-x-full', 'translate-x-0');
+                    sidebar.classList.add('lg:translate-x-0');
+                    sidebarOverlay.classList.remove('opacity-100');
+                    sidebarOverlay.classList.add('opacity-0', 'pointer-events-none');
+                } else {
+                    sidebar.classList.remove('lg:translate-x-0');
+                    sidebar.classList.add('-translate-x-full');
+                    sidebarOverlay.classList.remove('opacity-100');
+                    sidebarOverlay.classList.add('opacity-0', 'pointer-events-none');
+                }
+            });
+
+            // Smooth scrolling for navigation
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    const target = document.querySelector(this.getAttribute('href'));
+                    if (target) {
+                        target.scrollIntoView({
+                            behavior: 'smooth',
+                            block: 'start'
+                        });
+                    }
+                });
+            });
+
+            // Function to scroll to service sections
+            function scrollToSection(sectionId) {
+                const section = document.getElementById(sectionId);
+                if (section) {
+                    const servicesSection = document.getElementById('services');
+                    if (servicesSection) {
+                        servicesSection.scrollIntoView({
+                            behavior: 'smooth',
+                            block: 'start'
+                        });
+                        setTimeout(() => {
+                            section.scrollIntoView({
+                                behavior: 'smooth',
+                                block: 'start'
+                            });
+                        }, 500);
+                    }
+                }
+            }
+
+                               // Optimized Cookie Banner Functionality
+                   const cookieBanner = document.getElementById('cookie-banner');
+                   const acceptBtn = document.getElementById('accept-cookies');
+                   const configureBtn = document.getElementById('configure-cookies');
+                   
+                   // Performance optimization: Use requestAnimationFrame for smooth animations
+                   function showCookieBanner() {
+                       requestAnimationFrame(() => {
+                           cookieBanner.classList.add('show');
+                           // Add focus trap for accessibility
+                           cookieBanner.setAttribute('aria-hidden', 'false');
+                       });
+                   }
+                   
+                   function hideCookieBanner() {
+                       cookieBanner.classList.remove('show');
+                       cookieBanner.setAttribute('aria-hidden', 'true');
+                       setTimeout(() => {
+                           cookieBanner.style.display = 'none';
+                       }, 400); // Match CSS transition duration
+                   }
+                   
+                   // Check if user has already made a choice
+                   const cookieChoice = localStorage.getItem('cookieChoice');
+                   const cookieTimestamp = localStorage.getItem('cookieTimestamp');
+                   
+                   // Show banner if no choice made or if choice is older than 30 days
+                   const shouldShowBanner = !cookieChoice || 
+                       (cookieTimestamp && (Date.now() - new Date(cookieTimestamp).getTime()) > 30 * 24 * 60 * 60 * 1000);
+                   
+                   if (shouldShowBanner) {
+                       // Delay to ensure page is fully loaded
+                       setTimeout(showCookieBanner, 1000);
+                   } else {
+                       // Hide banner if user has already made a choice
+                       cookieBanner.style.display = 'none';
+                   }
+                   
+                   // Optimized event listeners with error handling
+                   acceptBtn.addEventListener('click', function(e) {
+                       e.preventDefault();
+                       try {
+                           localStorage.setItem('cookieChoice', 'accepted');
+                           localStorage.setItem('cookieTimestamp', new Date().toISOString());
+                           hideCookieBanner();
+                           
+                           // Optional: Track consent for analytics
+                           if (typeof gtag !== 'undefined') {
+                               gtag('consent', 'update', {
+                                   'analytics_storage': 'granted',
+                                   'ad_storage': 'granted'
+                               });
+                           }
+                       } catch (error) {
+                           console.warn('Failed to save cookie preference:', error);
+                           hideCookieBanner();
+                       }
+                   });
+                   
+                   // Cookie preferences modal functionality
+                   const cookieModal = document.getElementById('cookie-modal');
+                   const closeModalBtn = document.getElementById('close-modal');
+                   const savePreferencesBtn = document.getElementById('save-preferences');
+                   const rejectAllBtn = document.getElementById('reject-all');
+                   const analyticsToggle = document.getElementById('analytics-toggle');
+                   const preferenceToggle = document.getElementById('preference-toggle');
+                   const analyticsSwitch = document.getElementById('analytics-switch');
+                   const analyticsThumb = document.getElementById('analytics-thumb');
+                   const preferenceSwitch = document.getElementById('preference-switch');
+                   const preferenceThumb = document.getElementById('preference-thumb');
+                   
+                   // Toggle switch functionality
+                   function toggleSwitch(toggle, switchEl, thumb) {
+                       if (toggle.checked) {
+                           switchEl.classList.remove('bg-gray-200');
+                           switchEl.classList.add('bg-blue-600');
+                           thumb.style.transform = 'translateX(24px)';
+                       } else {
+                           switchEl.classList.remove('bg-blue-600');
+                           switchEl.classList.add('bg-gray-200');
+                           thumb.style.transform = 'translateX(0px)';
+                       }
+                   }
+                   
+                   // Initialize toggle switches
+                   toggleSwitch(analyticsToggle, analyticsSwitch, analyticsThumb);
+                   toggleSwitch(preferenceToggle, preferenceSwitch, preferenceThumb);
+                   
+                   // Toggle switch event listeners
+                   analyticsSwitch.addEventListener('click', function() {
+                       analyticsToggle.checked = !analyticsToggle.checked;
+                       toggleSwitch(analyticsToggle, analyticsSwitch, analyticsThumb);
+                   });
+                   
+                   preferenceSwitch.addEventListener('click', function() {
+                       preferenceToggle.checked = !preferenceToggle.checked;
+                       toggleSwitch(preferenceToggle, preferenceSwitch, preferenceThumb);
+                   });
+                   
+                   // Modal functions
+                   function showModal() {
+                       cookieModal.classList.remove('hidden');
+                       cookieModal.classList.add('show');
+                       document.body.style.overflow = 'hidden';
+                       
+                       // Focus trap for modal
+                       const focusableElements = cookieModal.querySelectorAll(
+                           'button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])'
+                       );
+                       if (focusableElements.length > 0) {
+                           focusableElements[0].focus();
+                       }
+                   }
+                   
+                   function hideModal() {
+                       cookieModal.classList.remove('show');
+                       cookieModal.classList.add('hidden');
+                       document.body.style.overflow = '';
+                   }
+                   
+                   // Configure button functionality
+                   configureBtn.addEventListener('click', function(e) {
+                       e.preventDefault();
+                       hideCookieBanner();
+                       showModal();
+                   });
+                   
+                   // Close modal events
+                   closeModalBtn.addEventListener('click', hideModal);
+                   cookieModal.addEventListener('click', function(e) {
+                       if (e.target === cookieModal) {
+                           hideModal();
+                       }
+                   });
+                   
+                   // Save preferences functionality
+                   savePreferencesBtn.addEventListener('click', function() {
+                       try {
+                           const preferences = {
+                               analytics: analyticsToggle.checked,
+                               preferences: preferenceToggle.checked,
+                               essential: true // Always true
+                           };
+                           
+                           localStorage.setItem('cookieChoice', 'configured');
+                           localStorage.setItem('cookiePreferences', JSON.stringify(preferences));
+                           localStorage.setItem('cookieTimestamp', new Date().toISOString());
+                           
+                           hideModal();
+                           
+                           // Optional: Track consent for analytics
+                           if (typeof gtag !== 'undefined') {
+                               gtag('consent', 'update', {
+                                   'analytics_storage': preferences.analytics ? 'granted' : 'denied',
+                                   'ad_storage': preferences.preferences ? 'granted' : 'denied'
+                               });
+                           }
+                           
+                           console.log('Cookie preferences saved:', preferences);
+                       } catch (error) {
+                           console.warn('Failed to save cookie preferences:', error);
+                           hideModal();
+                       }
+                   });
+                   
+                   // Reject all functionality
+                   rejectAllBtn.addEventListener('click', function() {
+                       try {
+                           const preferences = {
+                               analytics: false,
+                               preferences: false,
+                               essential: true // Always true
+                           };
+                           
+                           localStorage.setItem('cookieChoice', 'rejected');
+                           localStorage.setItem('cookiePreferences', JSON.stringify(preferences));
+                           localStorage.setItem('cookieTimestamp', new Date().toISOString());
+                           
+                           hideModal();
+                           
+                           // Optional: Track consent for analytics
+                           if (typeof gtag !== 'undefined') {
+                               gtag('consent', 'update', {
+                                   'analytics_storage': 'denied',
+                                   'ad_storage': 'denied'
+                               });
+                           }
+                           
+                           console.log('All cookies rejected except essential');
+                       } catch (error) {
+                           console.warn('Failed to save cookie preferences:', error);
+                           hideModal();
+                       }
+                   });
+                   
+                   // Keyboard navigation for modal
+                   cookieModal.addEventListener('keydown', function(e) {
+                       if (e.key === 'Escape') {
+                           hideModal();
+                       }
+                   });
+                   
+                   // Keyboard navigation support
+                   cookieBanner.addEventListener('keydown', function(e) {
+                       if (e.key === 'Escape') {
+                           hideCookieBanner();
+                       }
+                   });
+                   
+                   // Focus management for accessibility
+                   function trapFocus(element) {
+                       const focusableElements = element.querySelectorAll(
+                           'button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])'
+                       );
+                       const firstElement = focusableElements[0];
+                       const lastElement = focusableElements[focusableElements.length - 1];
+                       
+                       if (firstElement) {
+                           firstElement.focus();
+                       }
+                       
+                       element.addEventListener('keydown', function(e) {
+                           if (e.key === 'Tab') {
+                               if (e.shiftKey) {
+                                   if (document.activeElement === firstElement) {
+                                       e.preventDefault();
+                                       lastElement.focus();
+                                   }
+                               } else {
+                                   if (document.activeElement === lastElement) {
+                                       e.preventDefault();
+                                       firstElement.focus();
+                                   }
+                               }
+                           }
+                       });
+                   }
+                   
+                   // Apply focus trap when banner shows
+                   cookieBanner.addEventListener('transitionend', function() {
+                       if (cookieBanner.classList.contains('show')) {
+                           trapFocus(cookieBanner);
+                       }
+                   });
+            
+           
+            
+                               // Add hover effects - EXCLUDING cookie banner, body, mobile sidebar, and toggle switches
+                   const allBgWhiteElements = document.querySelectorAll('.bg-white');
+                   allBgWhiteElements.forEach(card => {
+                       // Skip the cookie banner completely
+                       if (card.id === 'cookie-banner') {
+                           return;
+                       }
+                       
+                       // Skip body element
+                       if (card.tagName === 'BODY') {
+                           return;
+                       }
+                       
+                       // Skip mobile sidebar
+                       if (card.id === 'sidebar') {
+                           return;
+                       }
+                       
+                       // Skip toggle switch thumbs
+                       if (card.id === 'analytics-thumb' || card.id === 'preference-thumb') {
+                           return;
+                       }
+                       
+                       // Double check - skip if it's the cookie banner
+                       if (card === cookieBanner) {
+                           return;
+                       }
+                       
+                       card.addEventListener('mouseenter', function() {
+                           // Extra safety check
+                           if (this.id === 'cookie-banner' || this.tagName === 'BODY' || this.id === 'sidebar' || this.id === 'analytics-thumb' || this.id === 'preference-thumb') {
+                               return;
+                           }
+                           this.style.transform = 'translateY(-2px)';
+                       });
+                       card.addEventListener('mouseleave', function() {
+                           // Extra safety check
+                           if (this.id === 'cookie-banner' || this.tagName === 'BODY' || this.id === 'sidebar' || this.id === 'analytics-thumb' || this.id === 'preference-thumb') {
+                               return;
+                           }
+                           this.style.transform = 'translateY(0)';
+                       });
+                   });
+        });
+    </script>
 </body>
-</html> 
+</html>
